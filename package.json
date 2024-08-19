@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "@hasith/portfolio",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -14,5 +14,7 @@
     "@astrojs/netlify": "^5.5.1",
     "astro": "^4.14.2",
     "typescript": "^5.5.4"
-  }
+  },
+  "packageManager": "pnpm@9.7.1"
+
 }
