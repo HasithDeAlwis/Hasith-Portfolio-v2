@@ -15,6 +15,10 @@
     "astro": "^4.14.2",
     "typescript": "^5.5.4"
   },
-  "packageManager": "pnpm@9.7.1"
-
+  "packageManager": "pnpm@9.7.1",
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.26.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-astro": "^1.2.3"
+  }
 }
