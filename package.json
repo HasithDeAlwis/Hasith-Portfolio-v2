@@ -18,7 +18,15 @@
   "packageManager": "pnpm@9.7.1",
   "devDependencies": {
     "@antfu/eslint-config": "^2.26.0",
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/types": "^19.0.3",
     "eslint": "^9.9.0",
-    "eslint-plugin-astro": "^1.2.3"
+    "eslint-plugin-astro": "^1.2.3",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
