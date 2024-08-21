@@ -12,17 +12,17 @@ const Configuration: UserConfig = {
       RuleConfigSeverity.Error,
       'always', // Always enforce this rule
       [
-        'build',    // Build-related changes (e.g., compile, package)
-        'chore',    // Other changes that don't modify src or test files
-        'ci',       // Continuous Integration changes
-        'docs',     // Documentation changes
-        'feat',     // New features
-        'fix',      // Bug fixes
-        'perf',     // Performance improvements
+        'build', // Build-related changes (e.g., compile, package)
+        'chore', // Other changes that don't modify src or test files
+        'ci', // Continuous Integration changes
+        'docs', // Documentation changes
+        'feat', // New features
+        'fix', // Bug fixes
+        'perf', // Performance improvements
         'refactor', // Code refactoring without changing functionality
-        'revert',   // Revert previous commits
-        'style',    // Code style changes (formatting, white-space, etc.)
-        'test',     // Adding or updating tests
+        'revert', // Revert previous commits
+        'style', // Code style changes (formatting, white-space, etc.)
+        'test', // Adding or updating tests
       ],
     ],
     'type-case': [RuleConfigSeverity.Error, 'always', 'lower-case'],
@@ -30,13 +30,13 @@ const Configuration: UserConfig = {
 
     // -------------- SCOPE ----------------
     // Ensure scope is in PascalCase
-    'scope-case': [RuleConfigSeverity.Error, 'always', 'pascal-case'],
+    'scope-case': [RuleConfigSeverity.Error, 'always', 'lower-case'],
     // Ensure scope is not empty
     'scope-empty': [RuleConfigSeverity.Error, 'never'],
 
     // -------------- SUBJECT ----------------
     // Ensure subject is in sentence-case
-    'subject-case': [RuleConfigSeverity.Error, 'always', 'sentence-case'],
+    'subject-case': [RuleConfigSeverity.Error, 'always', 'lower-case'],
     'subject-empty': [RuleConfigSeverity.Error, 'never'],
 
     // -------------- HEADER ----------------
