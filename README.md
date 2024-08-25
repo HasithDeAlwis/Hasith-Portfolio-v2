@@ -1,54 +1,51 @@
-# Astro Starter Kit: Basics
+# 👋 Welcome to my Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+Hi! Welcome to my portfolio, now that I've amassed roughly a year of development experience I have decided to revamp my portfolio! This marks my first project where I commit seriously to executing best practices and following industry standards. I'll document all my learnings here in [LEARNINGS.md](/LEARNINGS.MD) and issue #2.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🏃‍♀️ Getting Started
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+1. Install pnpm
+   `npm install -g pnpm`
+   Use this to install pnpm globally on your system. Verify the installation using `pnpm --version`.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+2. Install dependencies
+   `pnpm i`
+
+3. Run the app
+   `pnpm dev`
+   The portfolio will now be running on port 4321!
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
+```
 /
 ├── public/
 │   └── favicon.svg
 ├── src/
+│   ├── api/
 │   ├── components/
-│   │   └── Card.astro
+│   │   └── page-1-components
+│   │   └── page-2-components
+│   ├── helpers/
 │   ├── layouts/
-│   │   └── Layout.astro
 │   └── pages/
 │       └── index.astro
+│   ├── services/
+│   ├── tests
+│       └── unit/
+│       └── e2e/
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- `src/api`: where the the API layer exists
+- `src/components`: where any reusable components of the app exist
+- `src/helpers`: where functions that are reused throughout the app exist
+- `src/layout`: where HOC exists will be used to enforce generic page layouts
+- `src/pages/`: where each page exists. Astro looks for `.astro` or `.md` files in the directory. Each page is exposed as a route based on its file name.
+- `src/services`: where larger functions or scripts will exist
+- `src/test`: where all tests reside, unit and e2e
+  Any static assets, like images, can be placed in the `public/` directory.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🎨 Figma
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Link to this project's [Figma](https://www.figma.com/design/5mPcnmiJ9VuclwIzIPG8gp/Hasith-De-Alwis-Portfolio?node-id=107-337&t=USZvijke5NSvDKp9-1)
