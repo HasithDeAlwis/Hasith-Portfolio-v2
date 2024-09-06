@@ -24,6 +24,8 @@
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/types": "^19.0.3",
+    "@playwright/test": "^1.46.1",
+    "@types/node": "^22.5.0",
     "eslint": "^9.9.0",
     "eslint-plugin-astro": "^1.2.3",
     "eslint-plugin-format": "^0.1.2",
