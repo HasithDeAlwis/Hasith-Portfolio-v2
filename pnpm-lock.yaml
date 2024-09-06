@@ -30,6 +30,9 @@ importers:
       '@antfu/eslint-config':
         specifier: ^2.26.0
         version: 2.26.0(@typescript-eslint/utils@8.2.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4))(@vue/compiler-sfc@3.4.38)(astro-eslint-parser@1.0.2(typescript@5.5.4))(eslint-plugin-astro@1.2.3(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4))(eslint-plugin-format@0.1.2(eslint@9.9.0(jiti@1.21.6)))(eslint@9.9.0(jiti@1.21.6))(svelte@4.2.19)(typescript@5.5.4)(vitest@2.0.5(@types/node@22.5.0)(jsdom@25.0.0))
+      '@astrojs/ts-plugin':
+        specifier: ^1.10.2
+        version: 1.10.2
       '@commitlint/cli':
         specifier: ^19.4.0
         version: 19.4.0(@types/node@22.5.0)(typescript@5.5.4)
@@ -175,6 +178,9 @@ packages:
   '@astrojs/telemetry@3.1.0':
     resolution: {integrity: sha512-/ca/+D8MIKEC8/A9cSaPUqQNZm+Es/ZinRv0ZAzvu2ios7POQSsVD+VOj7/hypWNsNM3T7RpfgNq7H2TU1KEHA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
+
+  '@astrojs/ts-plugin@1.10.2':
+    resolution: {integrity: sha512-Q7EvUh9dU9Ufi6Jfe5JRcisBuremlLZ7jJImUY2/eMe6OVwCXSmETDir/tVwT0K+lnfNiUwju9qHZYX2/5ch0Q==}
 
   '@astrojs/underscore-redirects@0.3.4':
     resolution: {integrity: sha512-vYuYtIrTwxFlDRIhuekscorsHdLL8Hr3mgOczfM1tRWVPn54dDNcKG0DmfL4DlC5YJRoqVaVdUs508Hw643NTw==}
@@ -4186,6 +4192,16 @@ snapshots:
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
+
+  '@astrojs/ts-plugin@1.10.2':
+    dependencies:
+      '@astrojs/compiler': 2.10.3
+      '@astrojs/yaml2ts': 0.2.1
+      '@jridgewell/sourcemap-codec': 1.5.0
+      '@volar/language-core': 2.4.0
+      '@volar/typescript': 2.4.0
+      semver: 7.6.3
+      vscode-languageserver-textdocument: 1.0.12
 
   '@astrojs/underscore-redirects@0.3.4': {}
 
