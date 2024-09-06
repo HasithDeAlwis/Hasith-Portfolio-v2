@@ -1,10 +1,13 @@
 ---
+import { Button } from '@shadcn/button'
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/card.svelte';
+import Card from '../components/card.svelte'
+import '$lib/styles/app.css';
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
+    <Button client:load variant="secondary" size="lg">Hello World</Button>
     <svg
       class="astro-a"
       width="495"
@@ -41,6 +44,7 @@ import Card from '../components/card.svelte';
     </p>
     <ul role="list" class="link-card-grid">
       <Card
+        client:load
         href="https://docs.astro.build/"
         title="Documentation"
         body="Learn how Astro works and explore the official API docs."
