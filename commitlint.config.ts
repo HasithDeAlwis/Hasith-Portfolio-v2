@@ -12,6 +12,7 @@ const Configuration: UserConfig = {
       RuleConfigSeverity.Error,
       'always', // Always enforce this rule
       [
+        'ui', // UI related changes (eg. a button colour is changed)
         'build', // Build-related changes (e.g., compile, package)
         'chore', // Other changes that don't modify src or test files
         'ci', // Continuous Integration changes
