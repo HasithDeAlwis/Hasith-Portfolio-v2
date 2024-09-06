@@ -31,7 +31,8 @@
     "eslint-plugin-astro": "^1.2.3",
     "eslint-plugin-format": "^0.1.2",
     "husky": "^9.1.5",
-    "lint-staged": "^15.2.9"
+    "lint-staged": "^15.2.9",
+    "vitest": "^2.0.5"
   },
   "lint-staged": {
     "*.{js,ts,astro}": "eslint --fix"
