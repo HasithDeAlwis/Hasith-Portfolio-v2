@@ -16,6 +16,9 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.env.CI
+.env.test
+.env.development
 
 # macOS-specific files
 .DS_Store
@@ -25,3 +28,7 @@ pnpm-debug.log*
 
 # netlify build
 .netlify/*
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
