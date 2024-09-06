@@ -8,6 +8,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "e2e": "pnpm exec playwright test",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "astro": "astro",
