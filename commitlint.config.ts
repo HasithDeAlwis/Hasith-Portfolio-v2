@@ -23,7 +23,8 @@ const Configuration: UserConfig = {
         'refactor', // Code refactoring without changing functionality
         'revert', // Revert previous commits
         'style', // Code style changes (formatting, white-space, etc.)
-        'test', // Adding or updating tests
+        'test', // Adding or updating tests,
+        'storybook', // For adding components to storybook
       ],
     ],
     'type-case': [RuleConfigSeverity.Error, 'always', 'lower-case'],
