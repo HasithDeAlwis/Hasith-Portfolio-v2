@@ -1,7 +1,7 @@
 <script lang="ts">
-  export let title: string;
-  export let body: string;
-  export let href: string;
+  export let title;
+  export let body;
+  export let href;
 </script>
 
 <li class="link-card">
@@ -41,7 +41,6 @@
   }
   h2 {
     margin: 0;
-    font-size: 1.25rem;
     transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
   p {

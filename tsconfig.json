@@ -1,20 +1,8 @@
 {
-  "extends": "astro/tsconfigs/strict",
   "type": "module",
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "$lib/*": ["./src/*"],
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@shadcn/*": ["src/components/ui/*"]
-    },
-    "verbatimModuleSyntax": true,
-    "plugins": [
-      {
-        "name": "@astrojs/ts-plugin"
-      }
-    ]
+    "verbatimModuleSyntax": false
   },
   "exclude": [
     "node_modules",
