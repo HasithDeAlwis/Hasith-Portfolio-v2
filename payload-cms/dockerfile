@@ -23,8 +23,9 @@ RUN pnpm i
 COPY --from=builder /home/node/dist/server.js ./dist/server.js
 COPY --from=builder /home/node/dist/payload.config.cjs ./dist/payload.config.cjs
 COPY --from=builder /home/node/build ./build
+COPY --from=builder /home/node/src/migrations ./src/migrations
 
 
 EXPOSE 3000
 
-CMD ["pnpm", "serve"]
+CMD ["sh", "-c", "pnpm run migrate && pnpm serve"]
