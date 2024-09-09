@@ -34,3 +34,8 @@ pnpm-debug.log*
 /playwright/.cache/
 
 *storybook.log
+
+# docker
+data
+docker-volumes
+docker-data

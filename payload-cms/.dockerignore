@@ -1,0 +1,17 @@
+# Ignore node_modules directory
+node_modules
+
+# Ignore log files
+*.log
+
+# Ignore environment files
+.env
+
+# Ignore git directory
+.git
+
+# Ignore Dockerfile itself
+Dockerfile
+
+# Include specific files or directories
+!src/
