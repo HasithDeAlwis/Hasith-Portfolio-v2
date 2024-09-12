@@ -1,5 +1,0 @@
-[build.environment]
-  NODE_VERSION="22.6.0"
-[build]
-  command = "pnpm build"
-  publish = "dist"
