@@ -1,0 +1,30 @@
+FROM node:20-alpine AS base
+
+FROM base AS builder
+
+WORKDIR /home/node
+COPY package*.json ./
+COPY pnpm-lock.yaml ./
+
+COPY . .
+RUN npm i -g pnpm
+RUN pnpm i
+RUN pnpm run build
+
+FROM base AS runtime
+
+ENV NODE_ENV=production
+
+WORKDIR /home/node
+COPY package.json  ./
+COPY pnpm-lock.yaml ./
+RUN npm i -g pnpm
+RUN pnpm i
+COPY --from=builder /home/node/dist/server.js ./dist/server.js
+COPY --from=builder /home/node/dist/payload.config.cjs ./dist/payload.config.cjs
+COPY --from=builder /home/node/build ./build
+
+
+EXPOSE 3000
+
+CMD ["pnpm", "serve"]
