@@ -13,7 +13,7 @@
     "build:payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload build",
     "build:server": "esbuild --bundle src/server.ts --platform=node --packages=external --format=esm --outfile=dist/server.js",
     "build:payload-config": "esbuild  --bundle src/payload.config.ts --platform=node --packages=external --outfile=dist/payload.config.cjs",
-    "migrate": "cross-env NODE_ENV=production PAYLOAD_CONFIG_PATH=src/payload.config.ts payload migrate",
+    "migrate": "cross-env NODE_ENV=production PAYLOAD_CONFIG_PATH=dist/payload.config.cjs payload migrate",
     "migrate:create": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.ts payload migrate:create",
     "serve": "cross-env NODE_ENV=production PAYLOAD_CONFIG_PATH=dist/payload.config.cjs node ./dist/server.js",
     "build": "pnpm run build:server && pnpm run build:payload-config && pnpm run build:payload"
