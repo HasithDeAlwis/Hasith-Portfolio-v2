@@ -13,6 +13,8 @@ export default buildConfig({
     user: User.slug,
     bundler: viteBundler(),
   },
+  cors: process.env.WHITELIST_ORIGINS ? process.env.WHITELIST_ORIGINS.split(',') : [],
+  csrf: process.env.WHITELIST_ORIGINS ? process.env.WHITELIST_ORIGINS.split(',') : [],
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI ?? '',
