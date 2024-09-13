@@ -25,6 +25,7 @@ const Configuration: UserConfig = {
         'style', // Code style changes (formatting, white-space, etc.)
         'test', // Adding or updating tests,
         'storybook', // For adding components to storybook
+        'cms', // For changes to the CMS
       ],
     ],
     'type-case': [RuleConfigSeverity.Error, 'always', 'lower-case'],
