@@ -13,11 +13,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - name: Change Directory
-        run: cd website
       - name: Install dependencies
+        working-directory: ./website
         run: npm install -g pnpm && pnpm install
       - name: Run Unit Tests
+        working-directory: ./website
         run: pnpm run unit
       - uses: actions/upload-artifact@v4
         if: always()
