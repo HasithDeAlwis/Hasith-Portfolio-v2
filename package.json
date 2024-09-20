@@ -14,8 +14,8 @@
     "astro": "astro",
     "unit": "vitest",
     "prepare": "husky",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006 --config-dir ./apps/storybook/.storybook ",
+    "build-storybook": "storybook build --config-dir ./apps/storybook/.storybook "
   },
   "dependencies": {
     "@astrojs/check": "^0.9.2",
