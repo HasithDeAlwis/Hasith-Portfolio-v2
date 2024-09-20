@@ -8,11 +8,11 @@
     "start:website": "astro dev --root ./apps/website",
     "build:website": "astro check --root ./apps/website && astro build --root ./apps/website",
     "preview:website": "astro preview --root ./apps/website",
-    "e2e": "pnpm exec playwright test",
+    "e2e:website": "pnpm exec playwright test --config=./apps/website-e2e/playwright.config.ts",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "astro": "astro",
-    "unit": "vitest",
+    "unit:website": "vitest --config ./apps/website/vitest.config.ts",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006 --config-dir ./apps/storybook/.storybook ",
     "build-storybook": "storybook build --config-dir ./apps/storybook/.storybook "
