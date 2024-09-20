@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: npm install -g pnpm && pnpm install
       - name: Run Unit Tests
-        run: pnpm run unit
+        run: pnpm run unit:website
       - uses: actions/upload-artifact@v4
         if: always()
         with:
