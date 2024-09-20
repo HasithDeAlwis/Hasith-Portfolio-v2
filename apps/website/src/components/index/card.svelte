@@ -10,7 +10,7 @@
       {title}
       <span>&rarr;</span>
     </h2>
-    <p>
+    <p class="text-white">
       {body}
     </p>
   </a>

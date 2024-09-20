@@ -1,10 +1,9 @@
 ---
-import { Button } from '@shadcn/button'
-import Layout from '../layouts/Layout.astro'
-import Card from '../components/index/card.svelte'
-import '$lib/styles/app.css';
+import '$lib/styles/app.css'
+import Card from '@components/index/card.svelte'
+import { Button } from '@components/ui/button'
+import Layout from '../layouts/Layout.astro';
 ---
-
 <Layout title="Welcome to Astro.">
   <main>
     <Button client:load variant="secondary" size="lg">Hello World</Button>

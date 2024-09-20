@@ -4,10 +4,10 @@
   "version": "0.0.1",
   "packageManager": "pnpm@9.7.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
+    "dev:website": "astro dev --root ./apps/website",
+    "start:website": "astro dev --root ./apps/website",
+    "build:website": "astro check --root ./apps/website && astro build --root ./apps/website",
+    "preview:website": "astro preview --root ./apps/website",
     "e2e": "pnpm exec playwright test",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.2",
-    "@astrojs/netlify": "^5.5.1",
     "@astrojs/svelte": "^5.7.0",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.14.2",

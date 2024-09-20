@@ -1,9 +1,7 @@
-import { fontFamily } from 'tailwindcss/defaultTheme'
-
 /** @type {import('tailwindcss').Config} */
 const config = {
   darkMode: ['class'],
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', './src/stories/**/*.{js,ts,svelte}'],
+  content: ['./apps/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   safelist: ['dark'],
   theme: {
     screens: {
@@ -96,6 +94,12 @@ const config = {
         'neutral-700': '#404040',
         'neutral-800': '#262626',
         'neutral-900': '#171717',
+        'neutral-700': '#404040',
+        'neutral-800': '#262626',
+        'neutral-900': '#171717',
+        'border': 'hsl(var(--border) / <alpha-value>)',
+        'input': 'hsl(var(--input) / <alpha-value>)',
+        'ring': 'hsl(var(--ring) / <alpha-value>)',
       },
       borderRadius: {
         lg: 'var(--radius)',
