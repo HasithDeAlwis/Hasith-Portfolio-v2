@@ -1,0 +1,14 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "type": "module",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "esModuleInterop": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    ".cache"
+  ]
+}

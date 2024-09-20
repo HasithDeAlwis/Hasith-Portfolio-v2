@@ -1,5 +1,6 @@
 import process from 'node:process'
 import { defineConfig, devices } from '@playwright/test'
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -11,7 +12,7 @@ import { defineConfig, devices } from '@playwright/test'
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: '././src/tests/e2e/',
+  testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -70,7 +71,7 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'pnpm run dev',
+    command: 'pnpm run astro dev --root ./apps/website',
     url: 'http://localhost:4321',
   },
 })
