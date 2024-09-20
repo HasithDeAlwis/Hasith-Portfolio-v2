@@ -33,3 +33,4 @@ pnpm-debug.log*
 /playwright/.cache/
 
 *storybook.log
+storybook-static/

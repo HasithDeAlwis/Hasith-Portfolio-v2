@@ -2,7 +2,7 @@ import path from 'node:path'
 import type { StorybookConfig } from '@storybook/svelte-vite'
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|ts|svelte)'],
+  stories: ['../stories/**/*.stories.@(js|ts|svelte)'],
   addons: [
     '@storybook/addon-svelte-csf',
     '@storybook/addon-links',
@@ -28,11 +28,11 @@ const config: StorybookConfig = {
           },
           {
             find: '@components',
-            replacement: path.resolve(__dirname, '../src/components'),
+            replacement: path.resolve(__dirname, '../../website/src/components'),
           },
           {
             find: '@shadcn',
-            replacement: path.resolve(__dirname, '../src/components/ui'),
+            replacement: path.resolve(__dirname, '../../website/src/components/ui'),
           },
         ],
       },

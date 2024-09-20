@@ -1,7 +1,7 @@
 {
   "type": "module",
   "compilerOptions": {
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": false
   },
   "exclude": [
     "node_modules",
