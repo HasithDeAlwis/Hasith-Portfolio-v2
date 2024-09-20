@@ -63,7 +63,7 @@
     "vitest": "^2.0.5"
   },
   "lint-staged": {
-    "*.{js,ts,astro}": "eslint --fix"
+    "*.{js,ts,astro,mjs,cjs,mts,mjs}": "eslint --fix"
   },
   "eslintConfig": {
     "extends": [
