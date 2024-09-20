@@ -19,32 +19,49 @@ Hi! Welcome to my portfolio, now that I've amassed roughly a year of development
 
 ```
 /
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── api/
-│   ├── components/
-│   │   └── page-1-components
-│   │   └── page-2-components
-│   ├── helpers/
-│   ├── layouts/
-│   └── pages/
-│       └── index.astro
-│   ├── services/
-│   ├── tests
-│       └── unit/
-│       └── e2e/
+├── .husky/                         // CI tool for staged and commit linting
+├── apps/
+│   ├── payload/                    // Payload CMS: Headless CMS for building dynamic APIs and admin panels
+│   │   ├── src/
+│   │   │   ├── controllers/
+│   │   ├── ├── migrations/          // Payload CMS migrations
+│   │   │   ├── routes/
+│   │   │   ├── services/
+│   │   │   └── collections/         // Payload CMS collections
+│   │   ├── payload.config.ts
+│   │   ├── server.ts
+│   │   ├── dockerfile
+│   ├── storybook/
+│   │   ├── stories/                // Directory for stories
+│   │   └── .storybook/
+│   │       ├── main.js
+│   │       └── preview.js
+│   ├── website/                    // Main website for personal portfolio
+│   │   ├── src/
+│   │   │   ├── components/
+│   │   │   │   └── ui/              //shadcn components
+│   │   │   │   └── index/           // components used in index
+│   │   │   ├── layouts/
+│   │   │   │   └── MainLayout.astro
+│   │   │   ├── pages/
+│   │   │   │   └── index.astro
+│   │   │   ├── helpers/
+│   │   │   ├── styles/
+│   │   │   └── tests/               // Tests directory for the website
+│   │   │       ├── unit/            // Unit tests
+│   │   ├── dockerfile
+│   ├── website-e2e/                 // E2E tests for the main website
+│   │   ├── tests/
+│   │   │   ├── navigation/
+│   │   │   │   └── header.spec.ts
+│   │   │   └── components/          // Component tests
+│   │   │       └── button.spec.ts
+│   │   ├── playwright.config.ts
+│   │   └── package.json
+├── commitlint.config.ts             // commit linting rules
+├── eslint.config.ts                 // linting rules
 └── package.json
 ```
-
-- `src/api`: where the the API layer exists
-- `src/components`: where any reusable components of the app exist
-- `src/helpers`: where functions that are reused throughout the app exist
-- `src/layout`: where HOC exists will be used to enforce generic page layouts
-- `src/pages/`: where each page exists. Astro looks for `.astro` or `.md` files in the directory. Each page is exposed as a route based on its file name.
-- `src/services`: where larger functions or scripts will exist
-- `src/test`: where all tests reside, unit and e2e
-  Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🎨 Figma
 
