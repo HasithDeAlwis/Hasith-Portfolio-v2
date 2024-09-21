@@ -15,7 +15,13 @@
     "unit:website": "vitest --config ./apps/website/vitest.config.ts",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006 --config-dir ./apps/storybook/.storybook ",
-    "build-storybook": "storybook build --config-dir ./apps/storybook/.storybook "
+    "build-storybook": "storybook build --config-dir ./apps/storybook/.storybook ",
+    "start:server": "cross-env NODE_ENV=development PAYLOAD_CONFIG_PATH=./apps/payload/src/payload.config.ts tsx ./apps/payload/src/server.ts ",
+    "build:payload": "cross-env PAYLOAD_CONFIG_PATH=./apps/payload/src/payload.config.ts payload build",
+    "build:server": "esbuild --bundle ./apps/payload/src/server.ts --platform=node --packages=external --format=esm --outfile=www/server.js",
+    "build:payload-config": "esbuild  --bundle ./apps/payload/src/payload.config.ts --platform=node --packages=external --outfile=www/payload.config.cjs",
+    "build:cms": "pnpm run build:server && pnpm run build:payload-config && pnpm run build:payload",
+    "serve:cms": "cross-env NODE_ENV=production PAYLOAD_CONFIG_PATH=www/payload.config.cjs node ./www/server.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.2",
