@@ -34,3 +34,7 @@ pnpm-debug.log*
 
 *storybook.log
 storybook-static/
+
+# payload cms output
+build/
+www/
