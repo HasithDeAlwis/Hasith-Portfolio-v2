@@ -22,6 +22,7 @@
     "@astrojs/svelte": "^5.7.0",
     "@astrojs/tailwind": "^5.1.0",
     "@payloadcms/bundler-vite": "^0.1.7",
+    "@payloadcms/richtext-slate": "^1.5.2",
     "astro": "^4.14.2",
     "bits-ui": "^0.21.13",
     "clsx": "^2.1.1",
