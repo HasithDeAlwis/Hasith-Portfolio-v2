@@ -1,0 +1,27 @@
+FROM node:lts AS base
+WORKDIR /home/node
+
+# Copy only the package.json and lock file
+COPY package.json pnpm-lock.yaml ./
+
+FROM base AS builder
+# Install pnpm and dependencies
+RUN npm install -g pnpm@9.7.1
+RUN pnpm install --frozen-lockfile
+
+# Build the application
+COPY . .
+RUN pnpm run build:website
+
+# Stage 2: Serve the static site with nginx
+FROM nginx:alpine AS runtime
+
+
+# Copy the built application from the previous stage
+COPY --from=builder /home/node/apps/website/dist /usr/share/nginx/html
+
+# Expose port 4321 for HTTP traffic
+EXPOSE 4321
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
