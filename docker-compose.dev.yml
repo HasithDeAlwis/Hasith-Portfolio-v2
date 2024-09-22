@@ -7,6 +7,6 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
     volumes:
-      - ./payload-prod/data:/var/lib/postgresql/data
+      - ./payload-dev/data:/var/lib/postgresql/data
     ports:
       - 5432:5432
