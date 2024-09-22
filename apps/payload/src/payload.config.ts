@@ -16,6 +16,7 @@ export default buildConfig({
   cors: process.env.CORS_WHITELIST_ORIGINS ? process.env.CORS_WHITELIST_ORIGINS.split(',') : [],
   csrf: process.env.CSRF_WHITELIST_ORIGINS ? process.env.CSRF_WHITELIST_ORIGINS.split(',') : [],
   db: postgresAdapter({
+    migrationDir: process.env.NODE_ENV === 'production' ? './www/migrations' : './apps/payload/src/migrations',
     pool: {
       connectionString: process.env.DATABASE_URI ?? '',
     },
