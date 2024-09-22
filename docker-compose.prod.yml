@@ -1,0 +1,47 @@
+services:
+  db:
+    image: 'postgres'
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - ./payload-prod/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  app:
+    image: 'portfolio/payload-cms'
+    build: 
+      context: ./
+      dockerfile: ./apps/payload/dockerfile.prod
+    ports: 
+      - 3000:3000
+    environment:
+      - ENV=production
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - PAYLOAD_SECRET=${PAYLOAD_SECRET}
+      - DATABASE_URI=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}      
+      - PAYLOAD_PUBLIC_EXTERNAL_SERVER_URL=${PAYLOAD_PUBLIC_EXTERNAL_SERVER_URL}
+      - CORS_WHITELIST_ORIGINS=${CORS_WHITELIST_ORIGINS}
+      - CSRF_WHITELIST_ORIGINS=${CSRF_WHITELIST_ORIGINS}
+      - PORT=${PORT}
+    command: /bin/sh -c "pnpm serve:cms"
+    depends_on:
+      - db
+  web:
+    platform: linux/amd64
+    image: 'portfolio/website'
+    build:
+      context: ./ 
+      dockerfile: ./apps/website/dockerfile.prod
+    ports:
+      - 4321:80
+    environment:
+      - ENV=production
+    command: ["nginx", "-g", "daemon off;"]  
+    restart: always 
+    depends_on:
+          - db
