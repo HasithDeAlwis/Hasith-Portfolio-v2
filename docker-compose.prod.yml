@@ -28,7 +28,7 @@ services:
       - CORS_WHITELIST_ORIGINS=${CORS_WHITELIST_ORIGINS}
       - CSRF_WHITELIST_ORIGINS=${CSRF_WHITELIST_ORIGINS}
       - PORT=${PORT}
-    command: /bin/sh -c "pnpm serve:cms"
+    command: /bin/sh -c "pnpm run migrate:payload && pnpm run serve:cms"
     depends_on:
       - db
   web:
