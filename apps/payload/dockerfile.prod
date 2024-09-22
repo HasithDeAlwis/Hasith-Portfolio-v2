@@ -1,0 +1,40 @@
+FROM node:20-alpine AS base
+
+# Builder stage
+FROM base AS builder
+
+WORKDIR /home/node
+# Copy package files and install dependencies
+COPY package.json pnpm-lock.yaml ./
+
+# Copy the rest of the application and build
+COPY . .
+RUN npm install -g pnpm@9.7.1
+RUN pnpm i --frozen-lockfile --prod
+RUN pnpm run build:cms
+
+
+# Runtime stage
+FROM base AS runtime
+
+WORKDIR /home/node
+
+# Set the environment to production
+ENV NODE_ENV=production
+
+# Copy only production dependencies
+COPY package.json pnpm-lock.yaml ./
+RUN npm install -g pnpm@9.7.1
+RUN pnpm i --frozen-lockfile --prod
+
+# Copy necessary files from builder stage
+COPY --from=builder /home/node/www/server.js ./www/server.js
+COPY --from=builder /home/node/www/payload.config.cjs ./www/payload.config.cjs
+COPY --from=builder /home/node/build ./build
+COPY --from=builder /home/node/apps/payload/src/migrations ./www/migrations
+
+# Expose the application port
+EXPOSE 3000
+
+# Run migrations and start the server
+CMD ["/bin/sh", "-c", "pnpm run migrate:payload && pnpm run serve:cms"]
