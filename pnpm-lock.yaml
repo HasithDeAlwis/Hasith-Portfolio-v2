@@ -50,6 +50,9 @@ importers:
       payload:
         specifier: ^2.28.0
         version: 2.28.0(@swc/helpers@0.5.13)(@types/react@18.3.5)(esbuild@0.23.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.6.1(@swc/helpers@0.5.13))(esbuild@0.23.1))
+      sharp:
+        specifier: ^0.33.5
+        version: 0.33.5
       svelte:
         specifier: ^4.2.19
         version: 4.2.19
@@ -16427,7 +16430,6 @@ snapshots:
       '@img/sharp-wasm32': 0.33.5
       '@img/sharp-win32-ia32': 0.33.5
       '@img/sharp-win32-x64': 0.33.5
-    optional: true
 
   shebang-command@2.0.0:
     dependencies:
