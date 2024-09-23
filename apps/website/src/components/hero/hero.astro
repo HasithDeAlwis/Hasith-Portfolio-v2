@@ -2,9 +2,8 @@
 import '$lib/styles/app.css'
 import { Image } from 'astro:assets'
 import forestBackground from '@assets/hero/forest-background.svg'
-import cloudOne from '@assets/hero/cloud-hero-1.svg'
 import cloudTwo from '@assets/hero/cloud-hero-2.svg'
-
+import cloudOne from '@assets/hero/cloud-hero-1.svg'
 ---
 
 <div class="min-h-screen realtive bg-gradient-to-t from-secondary-200 via-secondary-200 to-primary-400">
@@ -38,7 +37,7 @@ import cloudTwo from '@assets/hero/cloud-hero-2.svg'
         <Image
           src={forestBackground}
           alt="Forest background for hero section"
-          class="object-cover image-render w-full h-full"
+          class="object-cover image-render w-screen"
           id="forest"
           loading="eager"
         />
@@ -52,13 +51,13 @@ import cloudTwo from '@assets/hero/cloud-hero-2.svg'
 
     @keyframes move-left {
         0% { transform: translate3d(0, 0, 0); }
-        20% { transform: translate3d(0, 0, 0); }
+        30% { transform: translate3d(0, 0, 0); }
         100% { transform: translate3d(-100vw, 0, 0); visibility: hidden; }
     }
 
     @keyframes move-right {
         0% { transform: translate3d(0, 0, 0); }
-        10% { transform: translate3d(0, 0, 0); }
+        20% { transform: translate3d(0, 0, 0); }
         100% { transform: translate3d(100vw, 0, 0); visibility: hidden; }
     }
 
@@ -82,12 +81,12 @@ import cloudTwo from '@assets/hero/cloud-hero-2.svg'
     }
 
     .animate-move-left {
-        animation: move-left 4s ease-in-out forwards;
+        animation: move-left 3s ease-in-out forwards;
         will-change: transform, visibility;
     }
 
     .animate-move-right {
-        animation: move-right 4s ease-in-out forwards;
+        animation: move-right 3s ease-in-out forwards;
         will-change: transform, visibility;
     }
 </style>
