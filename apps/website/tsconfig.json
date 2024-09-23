@@ -7,7 +7,8 @@
       "$lib/*": ["./src/*"],
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@shadcn/*": ["src/components/ui/*"]
+      "@shadcn/*": ["src/components/ui/*"],
+      "@assets/*": ["src/assets/*"]
     },
     "verbatimModuleSyntax": true,
     "plugins": [
