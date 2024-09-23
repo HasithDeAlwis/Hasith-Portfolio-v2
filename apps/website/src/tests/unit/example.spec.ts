@@ -1,4 +1,3 @@
-import process from 'node:process'
 import { describe, expect, it } from 'vitest'
 
 describe('an example test suite should always pass', () => {
