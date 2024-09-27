@@ -29,6 +29,7 @@
     "@astrojs/check": "^0.9.2",
     "@astrojs/svelte": "^5.7.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@aws-sdk/client-s3": "^3.658.1",
     "@payloadcms/bundler-vite": "^0.1.7",
     "@payloadcms/db-postgres": "^0.8.6",
     "@payloadcms/plugin-cloud-storage": "^1.1.3",
