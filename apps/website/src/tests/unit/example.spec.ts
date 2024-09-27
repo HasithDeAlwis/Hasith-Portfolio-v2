@@ -8,12 +8,3 @@ describe('an example test suite should always pass', () => {
     expect(true).toBe(true)
   })
 })
-
-describe('an example test suite should always fail', () => {
-  it ('should always fail', () => {
-    expect(3 + 2).toBe(4)
-  })
-  it ('should always fail pt. 2', () => {
-    expect(false).toBe(true)
-  })
-})
