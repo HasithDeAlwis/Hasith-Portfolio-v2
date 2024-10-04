@@ -23,6 +23,7 @@
     "build:server": "esbuild --bundle ./apps/payload/src/server.ts --platform=node --packages=external --format=esm --outfile=www/server.js",
     "build:payload-config": "esbuild  --bundle ./apps/payload/src/payload.config.ts --platform=node --packages=external --outfile=www/payload.config.cjs",
     "build:cms": "pnpm run build:server && pnpm run build:payload-config && pnpm run build:payload",
+    "generate:types": "PAYLOAD_CONFIG_PATH=./apps/payload/src/payload.config.ts payload generate:types",
     "serve:cms": "cross-env NODE_ENV=production PAYLOAD_CONFIG_PATH=www/payload.config.cjs node ./www/server.js"
   },
   "dependencies": {
