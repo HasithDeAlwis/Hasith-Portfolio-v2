@@ -1,4 +1,5 @@
 /* eslint-disable node/prefer-global/process */
+import path from 'node:path'
 import { webpackBundler } from '@payloadcms/bundler-webpack'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { slateEditor } from '@payloadcms/richtext-slate'
@@ -28,6 +29,9 @@ const adapter = s3Adapter({
 // However, swithcing between Vite and Webpack is not difficult
 // TODO: Switch to Vite when the viteBundler is in a better state
 export default buildConfig({
+  typescript: {
+    outputFile: path.resolve(__dirname, './../../website/src/types/generated-types.ts'),
+  },
   serverURL: process.env.PAYLOAD_PUBLIC_EXTERNAL_SERVER_URL ?? '',
   collections: [User, CurrentlyLearning, Media, AboutMeDescription, AboutMeAsset],
   admin: {
