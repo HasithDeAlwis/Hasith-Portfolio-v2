@@ -7,10 +7,10 @@
     component: AboutMeText,
     tags: ['autodocs'],
     argTypes: {
-      variant: {
+      subheader: {
         control: 'text',
       },
-      size: {
+      description: {
         control: 'text',
       },
     },
