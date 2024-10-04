@@ -8,6 +8,8 @@ import { s3Adapter } from '@payloadcms/plugin-cloud-storage/s3'
 import CurrentlyLearning from './collections/skills/currently-learning'
 import User from './collections/user/user'
 import Media from './collections/media/media'
+import AboutMeDescription from './collections/about-me/about-me'
+import AboutMeAsset from './collections/about-me/about-me-assets'
 
 const adapter = s3Adapter({
   config: {
@@ -27,7 +29,7 @@ const adapter = s3Adapter({
 // TODO: Switch to Vite when the viteBundler is in a better state
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_EXTERNAL_SERVER_URL ?? '',
-  collections: [User, CurrentlyLearning, Media],
+  collections: [User, CurrentlyLearning, Media, AboutMeDescription, AboutMeAsset],
   admin: {
     user: User.slug,
     bundler: webpackBundler(),
