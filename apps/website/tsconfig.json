@@ -9,7 +9,7 @@
       "@layouts/*": ["src/layouts/*"],
       "@shadcn/*": ["src/components/ui/*"],
       "@assets/*": ["src/assets/*"],
-      "@types/*": ["src/types/*"]
+      "@models/*": ["src/models/*"]
     },
     "verbatimModuleSyntax": true,
     "plugins": [
