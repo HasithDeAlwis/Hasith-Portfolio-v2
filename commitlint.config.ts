@@ -38,7 +38,7 @@ const Configuration: UserConfig = {
 
     // -------------- SUBJECT ----------------
     // Ensure subject is in sentence-case
-    'subject-case': [RuleConfigSeverity.Error, 'always', 'lower-case'],
+    'subject-case': [RuleConfigSeverity.Error, 'never', []],
     'subject-empty': [RuleConfigSeverity.Error, 'never'],
 
     // -------------- HEADER ----------------
