@@ -35,8 +35,8 @@ const config: StorybookConfig = {
             replacement: path.resolve(__dirname, '../../website/src/components/ui'),
           },
           {
-            find: '@types',
-            replacement: path.resolve(__dirname, '../../website/src/types'),
+            find: '@models',
+            replacement: path.resolve(__dirname, '../../website/src/models'),
           },
         ],
       },
