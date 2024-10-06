@@ -34,6 +34,10 @@ const config: StorybookConfig = {
             find: '@shadcn',
             replacement: path.resolve(__dirname, '../../website/src/components/ui'),
           },
+          {
+            find: '@types',
+            replacement: path.resolve(__dirname, '../../website/src/types'),
+          },
         ],
       },
     }
