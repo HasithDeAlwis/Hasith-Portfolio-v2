@@ -3,7 +3,7 @@
   import { Story, Template } from '@storybook/addon-svelte-csf'
 
   export const meta = {
-    title: 'AboutMeText',
+    title: 'About-Me/AboutMeText',
     component: AboutMeText,
     tags: ['autodocs'],
     argTypes: {
