@@ -1,5 +1,6 @@
 /* eslint-disable node/prefer-global/process */
-import path from 'node:path'
+// eslint-disable-next-line unicorn/prefer-node-protocol
+import path from 'path'
 import { webpackBundler } from '@payloadcms/bundler-webpack'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { slateEditor } from '@payloadcms/richtext-slate'
@@ -32,6 +33,7 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(__dirname, './../../website/src/types/generated-types.ts'),
   },
+
   serverURL: process.env.PAYLOAD_PUBLIC_EXTERNAL_SERVER_URL ?? '',
   collections: [User, CurrentlyLearning, Media, AboutMeDescription, AboutMeAsset],
   admin: {
