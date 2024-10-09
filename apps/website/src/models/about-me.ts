@@ -2,9 +2,11 @@ export interface AboutMeAssetType {
   svgURL: string
   svgAlt: string
   order: number
+  id: number
 }
 
 export interface AboutMeTextType {
-  subheader: string
-  description: string
+  aboutMeSubheader: string
+  aboutMeDescription: string
+  id: number
 }
