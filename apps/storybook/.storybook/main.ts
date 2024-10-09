@@ -38,6 +38,10 @@ const config: StorybookConfig = {
             find: '@models',
             replacement: path.resolve(__dirname, '../../website/src/models'),
           },
+          {
+            find: '@assets',
+            replacement: path.resolve(__dirname, '../../website/src/assets'),
+          },
         ],
       },
     }
