@@ -85,7 +85,7 @@ export interface AboutMeDescription {
 export interface AboutMeAsset {
   id: number
   aboutMeOrder: number
-  aboutMeSVG: number | Media
+  aboutMeSVG: Media
   updatedAt: string
   createdAt: string
 }
