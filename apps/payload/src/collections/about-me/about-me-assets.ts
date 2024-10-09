@@ -2,6 +2,9 @@ import type { CollectionConfig } from 'payload/types'
 
 const AboutMeAsset: CollectionConfig = {
   slug: 'about-me-asset',
+  access: {
+    read: () => true,
+  },
   fields: [
     {
       name: 'aboutMeOrder',
