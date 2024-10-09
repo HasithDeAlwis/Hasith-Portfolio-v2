@@ -10,7 +10,7 @@ import { s3Adapter } from '@payloadcms/plugin-cloud-storage/s3'
 import CurrentlyLearning from './collections/skills/currently-learning'
 import User from './collections/user/user'
 import Media from './collections/media/media'
-import AboutMeDescription from './collections/about-me/about-me'
+import AboutMeDescription from './collections/about-me/about-me-text'
 import AboutMeAsset from './collections/about-me/about-me-assets'
 
 const adapter = s3Adapter({
