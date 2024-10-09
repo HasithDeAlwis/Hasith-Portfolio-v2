@@ -1,8 +1,16 @@
 ---
 import '$lib/styles/app.css'
+import AboutMe from '@components/about-me/about-me.svelte'
 import Layout from '../layouts/Layout.astro'
-import Hero from '$lib/components/hero/hero.astro';
+import Hero from '$lib/components/hero/hero.astro'
+
+import { getAboutMeData } from '$lib/api/about-me-api'
+
+const aboutMeData = await getAboutMeData()
+const images = aboutMeData.assetData
+const text = aboutMeData.textData
 ---
 <Layout title="Hasith De Alwis: Welcome to My Portfolio">
     <Hero />
+    {images.length ? <AboutMe images={images} text={text} /> : null}
 </Layout>
