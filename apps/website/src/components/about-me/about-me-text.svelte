@@ -13,7 +13,7 @@
 
 <div class='text-neutral-100'>
   <h1 class='font-display text-display-3-mobile text-display-1-mobile xl:text-display-3-desktop font-normal'>About Me</h1>
-  <p class='font-body text-poppins font-bold text-heading-4-mobile md:text-heading-3-mobile xl:text-heading-4-desktop'>
+  <p class='font-body text-poppins font-bold text-h4-mobile md:text-h3-mobile lg:text-h4-desktop'>
     {subheader}
   </p>
   <p class='font-body text-p1-mobile md:text-p3-desktop xl:text-p1-desktop font-normal'>
