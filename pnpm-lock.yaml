@@ -25,7 +25,7 @@ importers:
         version: 3.658.1(@aws-sdk/client-s3@3.658.1)
       '@payloadcms/bundler-webpack':
         specifier: ^1.0.7
-        version: 1.0.7(@swc/core@1.6.1(@swc/helpers@0.5.13))(ajv@6.12.6)(esbuild@0.23.1)(payload@2.28.0(@swc/helpers@0.5.13)(@types/react@18.3.5)(esbuild@0.23.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.6.1(@swc/helpers@0.5.13))(esbuild@0.23.1)(webpack-cli@4.10.0)))(sass@1.69.4)
+        version: 1.0.7(@swc/core@1.6.1(@swc/helpers@0.5.13))(ajv@8.17.1)(esbuild@0.23.1)(payload@2.28.0(@swc/helpers@0.5.13)(@types/react@18.3.5)(esbuild@0.23.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.6.1(@swc/helpers@0.5.13))(esbuild@0.23.1)(webpack-cli@4.10.0)))(sass@1.69.4)
       '@payloadcms/db-postgres':
         specifier: ^0.8.6
         version: 0.8.6(@types/react@18.3.5)(payload@2.28.0(@swc/helpers@0.5.13)(@types/react@18.3.5)(esbuild@0.23.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.6.1(@swc/helpers@0.5.13))(esbuild@0.23.1)(webpack-cli@4.10.0)))(react@18.3.1)
@@ -56,6 +56,9 @@ importers:
       express:
         specifier: ^4.21.0
         version: 4.21.0
+      gsap:
+        specifier: ^3.12.5
+        version: 3.12.5
       payload:
         specifier: ^2.28.0
         version: 2.28.0(@swc/helpers@0.5.13)(@types/react@18.3.5)(esbuild@0.23.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.6.1(@swc/helpers@0.5.13))(esbuild@0.23.1)(webpack-cli@4.10.0))
@@ -5493,6 +5496,9 @@ packages:
   gray-matter@4.0.3:
     resolution: {integrity: sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==}
     engines: {node: '>=6.0'}
+
+  gsap@3.12.5:
+    resolution: {integrity: sha512-srBfnk4n+Oe/ZnMIOXt3gT605BX9x5+rh/prT2F1SsNJsU1XuMiP0E2aptW481OnonOGACZWBqseH5Z7csHxhQ==}
 
   gzip-size@6.0.0:
     resolution: {integrity: sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==}
@@ -12010,9 +12016,9 @@ snapshots:
 
   '@oslojs/encoding@0.4.1': {}
 
-  '@payloadcms/bundler-webpack@1.0.7(@swc/core@1.6.1(@swc/helpers@0.5.13))(ajv@6.12.6)(esbuild@0.23.1)(payload@2.28.0(@swc/helpers@0.5.13)(@types/react@18.3.5)(esbuild@0.23.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.6.1(@swc/helpers@0.5.13))(esbuild@0.23.1)(webpack-cli@4.10.0)))(sass@1.69.4)':
+  '@payloadcms/bundler-webpack@1.0.7(@swc/core@1.6.1(@swc/helpers@0.5.13))(ajv@8.17.1)(esbuild@0.23.1)(payload@2.28.0(@swc/helpers@0.5.13)(@types/react@18.3.5)(esbuild@0.23.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.6.1(@swc/helpers@0.5.13))(esbuild@0.23.1)(webpack-cli@4.10.0)))(sass@1.69.4)':
     dependencies:
-      ajv: 6.12.6
+      ajv: 8.17.1
       compression: 1.7.4
       connect-history-api-fallback: 1.6.0
       css-loader: 5.2.7(webpack@5.94.0(@swc/core@1.6.1(@swc/helpers@0.5.13))(esbuild@0.23.1)(webpack-cli@4.10.0))
@@ -15914,6 +15920,8 @@ snapshots:
       kind-of: 6.0.3
       section-matter: 1.0.0
       strip-bom-string: 1.0.0
+
+  gsap@3.12.5: {}
 
   gzip-size@6.0.0:
     dependencies:
