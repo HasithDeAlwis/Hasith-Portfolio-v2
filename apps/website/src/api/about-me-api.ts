@@ -1,5 +1,3 @@
-// eslint-disable-next-line unicorn/prefer-node-protocol
-import process from 'process'
 import { globalKeys } from '$lib/keys'
 import type { AboutMeAssetType, AboutMeTextType } from '$lib/models/about-me'
 import type { AboutMeAsset } from '$lib/models/generated-types'
