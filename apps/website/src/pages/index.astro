@@ -12,5 +12,5 @@ const text = aboutMeData.textData
 ---
 <Layout title="Hasith De Alwis: Welcome to My Portfolio">
     <Hero />
-    {images.length ? <AboutMe images={images} text={text} /> : null}
+    {images.length ? <AboutMe images={images} text={text} client:load /> : null}
 </Layout>
