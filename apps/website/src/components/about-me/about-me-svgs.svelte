@@ -1,4 +1,6 @@
 <script lang='ts'>
+  import { gsap } from 'gsap'
+  import { onMount } from 'svelte'
   import type { AboutMeAssetType } from '@models/about-me'
   import LazyImage from '@shadcn/LazyImage/lazy-image.svelte'
   /**
@@ -16,12 +18,43 @@
     }
   }
 
+  onMount(() => {
+    images.forEach((_, index) => {
+      const yOffset = Math.random() * 20 + 2
+      const duration = Math.random() * 1 + 2
+      gsap.to(`#about-me-images > div:nth-child(${index + 1}`, {
+        repeat: -1,
+        duration,
+        yoyo: true,
+        y: yOffset * (Math.floor(Math.random() * 2 === 0 ? -1 : 1)),
+        stagger: {
+          amount: 0.4,
+          from: 'start',
+        },
+      })
+    })
+
+    gsap.from('#about-me-images > div', {
+      scrollTrigger: {
+        trigger: '#about-me-images',
+        start: 'top 100%',
+        markers: true,
+
+      },
+      x: '200px', // Move from offscreen left to the original position
+      opacity: 0,
+      duration: 1,
+      ease: 'bounce.out',
+      stagger: 0.2,
+    })
+  })
+
 </script>
 
-<div class='w-[50px] h-[300px] xl:w-1/12 transform transfor scale-75 md:scale-[0.85] lg:scale-100'>
+<div id='about-me-images' class='w-[0px] h-[300px] xl:w-1/12 transform transfor scale-75 md:scale-[0.85] lg:scale-100'>
   {#each images as image}
     <div class={`absolute z-10 ${getCSSFromOrder(image.order)}`}>
-      <LazyImage src={image.svgURL ?? ''} alt={image.svgAlt ?? ''} />
+      <LazyImage src={image.svgURL ?? ''} alt={image.svgAlt ?? ''} classStyles='transition-transform duration-300 hover:scale-110' />
     </div>
   {/each}
 
