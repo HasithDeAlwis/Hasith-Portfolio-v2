@@ -6,8 +6,8 @@ import cloudTwo from '@assets/hero/cloud-hero-2.svg'
 import cloudOne from '@assets/hero/cloud-hero-1.svg'
 ---
 
-<div class="min-h-screen realtive bg-gradient-to-t from-secondary-200 via-secondary-200 to-primary-400">
-    <div class="absolute ml-8 md:ml-0 top-24 md:top-32 xl:top-20 md:left-20">
+<div class="w-full min-h-screen relative bg-gradient-to-t from-secondary-200 via-secondary-200 to-primary-400 overflow-x-hidden">
+    <div class="absolute ml-8 md:ml-0 top-24 md:top-32 xl:top-20 md:left-20 ">
         <div class="relative fade-in-1">
             <h1 class="text-display-1-mobile md:text-display-2-desktop relative
             lg:text-display-1-desktop font-black text-primary-800 leading-[0.5]"
@@ -45,10 +45,6 @@ import cloudOne from '@assets/hero/cloud-hero-1.svg'
 </div>
 
 <style>
-    .image-render {
-        image-rendering: optimizeQuality;
-    }
-
     @keyframes move-left {
         0% { transform: translate3d(0, 0, 0); }
         30% { transform: translate3d(0, 0, 0); }
