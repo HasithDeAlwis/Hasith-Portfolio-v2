@@ -12,12 +12,12 @@
 
 </script>
 
-<div class='z-10 h-screen relative'>
+<div class='z-10 h-screen relative overflow-x-hidden'>
   <div class='pt-32 md:pt-44 inline-flex md:flex-row flex-col justify-center items-center z-10 static'>
     <div class='w-10/12 md:w-3/5'>
       <AboutMeText subheader={text.aboutMeSubheader} description={text.aboutMeDescription} />
     </div>
-    <div class='w-[240px] md:w-[272px] lg:w-[320px]'>
+    <div class='w-[240px] md:w-[272px] lg:w-[320px] '>
       <AboutMeSvgs images={images} />
     </div>
   </div>
