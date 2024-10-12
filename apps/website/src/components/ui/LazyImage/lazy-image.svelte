@@ -3,9 +3,11 @@
   export let alt: string = ''
   const srcset: string = ''
   const sizes: string = ''
+  export let classStyles = ''
 </script>
 
 <img
+  class={classStyles}
   src={src}
   {srcset}
   {sizes}
