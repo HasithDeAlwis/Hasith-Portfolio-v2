@@ -1,6 +1,6 @@
 export interface AboutMeAssetType {
-  svgURL: string
-  svgAlt: string
+  url: string
+  alt: string
   order: number
   id: number
 }

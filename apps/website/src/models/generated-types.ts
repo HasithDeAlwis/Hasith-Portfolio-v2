@@ -6,18 +6,43 @@
  */
 
 export interface Config {
+  auth: {
+    users: UserAuthOperations
+  }
   collections: {
     'users': User
-    'currently-learning': CurrentlyLearning
     'media': Media
-    'about-me-description': AboutMeDescription
     'about-me-asset': AboutMeAsset
+    'about-me-description': AboutMeDescription
+    'payload-locked-documents': PayloadLockedDocument
     'payload-preferences': PayloadPreference
     'payload-migrations': PayloadMigration
   }
-
-  // eslint-disable-next-line ts/no-empty-object-type
-  globals: {}
+  db: {
+    defaultIDType: number
+  }
+  locale: null
+  user: User & {
+    collection: 'users'
+  }
+}
+export interface UserAuthOperations {
+  forgotPassword: {
+    email: string
+    password: string
+  }
+  login: {
+    email: string
+    password: string
+  }
+  registerFirstUser: {
+    email: string
+    password: string
+  }
+  unlock: {
+    email: string
+    password: string
+  }
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -34,18 +59,7 @@ export interface User {
   hash?: string | null
   loginAttempts?: number | null
   lockUntil?: string | null
-  password: string | null
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "currently-learning".
- */
-export interface CurrentlyLearning {
-  id: number
-  currentSkill?: string | null
-  currentSkillDescription?: string | null
-  updatedAt: string
-  createdAt: string
+  password?: string | null
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -53,12 +67,12 @@ export interface CurrentlyLearning {
  */
 export interface Media {
   id: number
-  altText?: string | null
-  caption?: string | null
+  alt: string
   prefix?: string | null
   updatedAt: string
   createdAt: string
   url?: string | null
+  thumbnailURL?: string | null
   filename?: string | null
   mimeType?: string | null
   filesize?: number | null
@@ -66,6 +80,17 @@ export interface Media {
   height?: number | null
   focalX?: number | null
   focalY?: number | null
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about-me-asset".
+ */
+export interface AboutMeAsset {
+  id: number
+  aboutMeOrder: number
+  aboutMeSVG: Media
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -80,12 +105,32 @@ export interface AboutMeDescription {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "about-me-asset".
+ * via the `definition` "payload-locked-documents".
  */
-export interface AboutMeAsset {
+export interface PayloadLockedDocument {
   id: number
-  aboutMeOrder: number
-  aboutMeSVG: Media
+  document?:
+    | ({
+      relationTo: 'users'
+      value: number | User
+    } | null)
+    | ({
+      relationTo: 'media'
+      value: number | Media
+    } | null)
+    | ({
+      relationTo: 'about-me-asset'
+      value: number | AboutMeAsset
+    } | null)
+    | ({
+      relationTo: 'about-me-description'
+      value: number | AboutMeDescription
+    } | null)
+  globalSlug?: string | null
+  user: {
+    relationTo: 'users'
+    value: number | User
+  }
   updatedAt: string
   createdAt: string
 }
@@ -122,4 +167,11 @@ export interface PayloadMigration {
   batch?: number | null
   updatedAt: string
   createdAt: string
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "auth".
+ */
+export interface Auth {
+  [k: string]: unknown
 }
