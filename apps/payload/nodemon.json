@@ -1,5 +1,0 @@
-{
-  "watch": ["src"],
-  "ext": "ts",
-  "exec": "cross-env NODE_ENV=development PAYLOAD_CONFIG_PATH=src/payload.config.ts tsx src/server.ts "
-}
