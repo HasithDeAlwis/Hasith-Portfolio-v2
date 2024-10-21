@@ -4,6 +4,7 @@
   const srcset: string = ''
   const sizes: string = ''
   export let classStyles = ''
+  export let style = ''
 </script>
 
 <img
@@ -13,4 +14,5 @@
   {sizes}
   {alt}
   loading='lazy'
+  style={style}
 />
