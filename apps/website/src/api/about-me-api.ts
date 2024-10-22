@@ -43,7 +43,7 @@ export async function getAboutMeData() {
     const assetData: Array<AboutMeAssetType> = data.data.AboutMeAssets.docs.map((asset: AboutMeAsset) => {
       return {
         id: asset.id,
-        svgURL: `http://localhost:3000${asset.aboutMeSVG.url}`,
+        svgURL: `${globalKeys.API_BASE_URL}${asset.aboutMeSVG.url}`,
         svgAlt: asset.aboutMeSVG.alt,
         order: asset.aboutMeOrder,
       }
