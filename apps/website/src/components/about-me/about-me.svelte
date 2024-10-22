@@ -12,7 +12,7 @@
 
 </script>
 
-<div class='z-10 h-screen relative overflow-x-hidden'>
+<div class='z-10 relative overflow-x-hidden overflow-y-hidden min-h-[80vh]'>
   <div class='pt-32 md:pt-44 inline-flex md:flex-row flex-col justify-center items-center z-10 static'>
     <div class='w-10/12 md:w-3/5'>
       <AboutMeText subheader={text.aboutMeSubheader} description={text.aboutMeDescription} />

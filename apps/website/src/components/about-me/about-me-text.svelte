@@ -49,21 +49,15 @@
     // -----ABOUT ME HEADER ANIMATIONS
     const splitHeader = new SplitType('#about-header', { types: 'chars' })
 
-    gsap.set(splitHeader, {
-      opacity: 0,
-      y: -100,
-    })
-
     // Animate each character
-    gsap.to(splitHeader.chars, {
+    gsap.from(splitHeader.chars, {
       scrollTrigger: {
         trigger: '#about-header', // Element to trigger the animation
         start: 'top 80%', // When the top of the element reaches 80% of the viewport
         end: 'top 70%', // When the top of the element reaches 50% of the viewport
-        markers: true, // Optional for debugging
       },
-      opacity: 1, // Start with 0 opacity
-      y: 0, // Start 50px above the final position
+      opacity: 0, // Start with 0 opacity
+      y: -100, // Start 50px above the final position
       stagger: 0.08, // Stagger the animation by 0.05 seconds for a more fluid effect
       duration: 0.3,
       ease: 'power1.out', // Easing function
