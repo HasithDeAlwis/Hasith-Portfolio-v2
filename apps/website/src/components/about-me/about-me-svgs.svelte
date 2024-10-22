@@ -38,8 +38,6 @@
       scrollTrigger: {
         trigger: '#about-me-images',
         start: 'top 100%',
-        markers: true,
-
       },
       x: '200px', // Move from offscreen left to the original position
       opacity: 0,
