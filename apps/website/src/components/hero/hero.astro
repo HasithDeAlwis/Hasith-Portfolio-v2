@@ -6,8 +6,8 @@ import cloudTwo from '@assets/hero/cloud-hero-2.svg'
 import cloudOne from '@assets/hero/cloud-hero-1.svg'
 ---
 
-<div class="w-full min-h-screen relative bg-gradient-to-t from-secondary-200 via-secondary-200 to-primary-400 overflow-x-hidden">
-    <div class="absolute ml-8 md:ml-0 top-24 md:top-32 xl:top-20 md:left-20 ">
+<section id="hero" class="relative w-full min-h-screen overflow-x-hidden bg-gradient-to-t from-secondary-200 via-secondary-200 to-primary-400">
+    <div class="absolute ml-8 md:ml-0 top-24 md:top-32 xl:top-32 md:left-20 ">
         <div class="relative fade-in-1">
             <h1 class="text-display-1-mobile md:text-display-2-desktop relative
             lg:text-display-1-desktop font-black text-primary-800 leading-[0.5]"
@@ -19,10 +19,8 @@ import cloudOne from '@assets/hero/cloud-hero-1.svg'
               class="h-auto top-[-1em] md:top-[-5em] left-[-3em] absolute z-40 animate-move-right"
             />
         </div>
-        <div class="relative fade-in-2 delay-300 z-0">
-            <h1 class="text-display-1-mobile md:text-display-2-desktop z-10 relative
-            lg:text-display-1-desktop font-display font-black text-primary-800"
-            >De Alwis</h1>
+        <div class="relative z-0 delay-300 fade-in-2">
+            <h1 class="relative z-10 font-black text-display-1-mobile md:text-display-2-desktop lg:text-display-1-desktop font-display text-primary-800">De Alwis</h1>
             <Image
               src={cloudTwo}
               alt="Bottom cloud illustration"
@@ -33,16 +31,16 @@ import cloudOne from '@assets/hero/cloud-hero-1.svg'
     </div>
 
     {/* Absolute image background uses a Image tag instead of a background image for optimizations */}
-    <div class="absolute bottom-0 xl:h-auto overflow-hidden z-0 image-render">
+    <div class="absolute bottom-0 z-0 overflow-hidden xl:h-auto image-render">
         <Image
           src={forestBackground}
           alt="Forest background for hero section"
-          class="object-cover image-render w-screen"
+          class="object-cover w-screen image-render"
           id="forest"
           loading="eager"
         />
     </div>
-</div>
+</section>
 
 <style>
     @keyframes move-left {

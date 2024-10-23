@@ -12,8 +12,8 @@
 
 </script>
 
-<div class='z-10 relative overflow-x-hidden overflow-y-hidden min-h-[80vh]'>
-  <div class='pt-32 md:pt-44 inline-flex md:flex-row flex-col justify-center items-center z-10 static'>
+<section id='about' class='z-10 relative overflow-x-hidden overflow-y-hidden min-h-[80vh] scroll-mt-16'>
+  <div class='static z-10 inline-flex flex-col items-center justify-center pt-32 md:pt-44 md:flex-row'>
     <div class='w-10/12 md:w-3/5'>
       <AboutMeText subheader={text.aboutMeSubheader} description={text.aboutMeDescription} />
     </div>
@@ -25,4 +25,4 @@
   <div class='absolute top-0 left-0 right-0 opacity-20 transform scale-y-[-1] z-[-1]'>
     <img class='object-cover w-screen min-h-[50vh]' src={forestBackground.src} alt='Inverted forest background' loading='lazy'>
   </div>
-</div>
+</section>
