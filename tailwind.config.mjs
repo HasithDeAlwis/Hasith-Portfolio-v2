@@ -101,8 +101,10 @@ const config = {
         'ring': 'hsl(var(--ring) / <alpha-value>)',
       },
       boxShadow: {
-        'primary': '16px 16px 0 0 #368593', // Single layer shadow with specified color
-        'primary-hover': '20px 20px 0 0 #368593', // Single layer shadow with specified color
+        'primary-600': '16px 16px 0 0 #368593', // Single layer shadow with specified color
+        'primary-600-hover': '20px 20px 0 0 #368593', // Single layer shadow with specified color
+        'primary-200': '16px 16px 0 0 #61D1E5', // Single layer shadow with specified color
+        'primary-200-hover': '20px 20px 0 0 #61D1E5', // Single layer shadow with specified color
       },
       borderRadius: {
         lg: 'var(--radius)',
