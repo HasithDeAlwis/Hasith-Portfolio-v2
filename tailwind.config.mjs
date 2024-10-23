@@ -81,6 +81,7 @@ const config = {
         'primary-400': '#57BBCD',
         'primary-600': '#368593',
         'primary-800': '#16353B',
+        'primary-900': '#081000',
         'secondary-100': '#EEEEDA',
         'secondary-200': '#D7D4B5',
         'secondary-400': '#AEAA81',
