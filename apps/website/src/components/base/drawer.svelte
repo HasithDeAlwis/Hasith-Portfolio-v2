@@ -1,6 +1,7 @@
 <script>
   import CloseIcon from '@assets/base/close.svg?url'
   import LazyImage from '@shadcn/LazyImage/lazy-image.svelte'
+  import { onDestroy } from 'svelte'
 
   export let isOpen = false
   export let closeDrawer
