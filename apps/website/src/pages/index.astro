@@ -5,6 +5,8 @@ import Hero from '@components/hero/hero.astro'
 import MySkills from '@components/skills/my-skills.svelte'
 import Projects from '@components/projects/projects.svelte'
 import CurrentlyLearning from '@components/skills/currently-learning.svelte'
+import Navbar from '@components/base/navbar.svelte'
+import Footer from '@components/base/footer.svelte'
 import Layout from '../layouts/Layout.astro'
 import { getCurrentlyLearningSkillsData, getLearnedSkillsData } from '$lib/api/skills-api'
 import { getAboutMeData } from '$lib/api/about-me-api'
@@ -19,9 +21,11 @@ const text = aboutMeData.textData
 // TODO refactor the type SkillsLearnedType to be more descriptive and useable there are fields we don't need
 ---
 <Layout title="Hasith De Alwis: Welcome to My Portfolio">
+    <Navbar client:only="svelte" />
     <Hero />
     {images.length ? <AboutMe images={images} text={text} client:visible /> : null}
     {skillsLearnedData.length ? <MySkills logos={skillsLearnedData} client:only="svelte" /> : null}
     {currentlyLearningData.length ? <CurrentlyLearning logos={skillsLearnedData} currentlyLearning={currentlyLearningData} /> : null}
     {projects.length ? <Projects projects={projects} /> : null}
+    <Footer />
 </Layout>
