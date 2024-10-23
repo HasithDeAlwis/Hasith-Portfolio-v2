@@ -1,6 +1,11 @@
 {
   "type": "module",
   "compilerOptions": {
+    "paths": {
+      "$lib/*": ["./apps/website/src/*"],
+      "components/*": ["./apps/website/src/components/*"],
+      "utils/*": ["./apps/website/src/components/*"]
+    },
     "esModuleInterop": true,
     "verbatimModuleSyntax": false
   },
