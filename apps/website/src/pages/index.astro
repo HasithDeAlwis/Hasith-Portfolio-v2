@@ -2,15 +2,22 @@
 import '$lib/styles/app.css'
 import AboutMe from '@components/about-me/about-me.svelte'
 import Hero from '@components/hero/hero.astro'
+import MySkills from '@components/skills/my-skills.svelte'
+import CurrentlyLearning from '@components/skills/currently-learning.svelte'
 import Layout from '../layouts/Layout.astro'
-
+import { getCurrentlyLearningSkillsData, getLearnedSkillsData } from '$lib/api/skills-api'
 import { getAboutMeData } from '$lib/api/about-me-api'
 
 const aboutMeData = await getAboutMeData()
+const skillsLearned = await getLearnedSkillsData()
+const currentlyLearning = await getCurrentlyLearningSkillsData()
 const images = aboutMeData.assetData
 const text = aboutMeData.textData
+// TODO refactor the type SkillsLearnedType to be more descriptive and useable there are fields we don't need
 ---
 <Layout title="Hasith De Alwis: Welcome to My Portfolio">
     <Hero />
-    {images.length ? <AboutMe images={images} text={text} client:load /> : null}
+    {images.length ? <AboutMe images={images} text={text} client:visible /> : null}
+    {skillsLearned.length ? <MySkills logos={skillsLearned} client:only="svelte" /> : null}
+    {currentlyLearning.length ? <CurrentlyLearning logos={skillsLearned} currentlyLearning={currentlyLearning} /> : null}
 </Layout>
