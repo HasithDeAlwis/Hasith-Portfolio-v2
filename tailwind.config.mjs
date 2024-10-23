@@ -10,6 +10,7 @@ const config = {
       'lg': '1024px',
       'xl': '1280px',
       '2xl': '1400px',
+      '3xl': '1600px',
     },
     container: {
       center: true,
@@ -74,6 +75,7 @@ const config = {
         'p5-desktop': '10px',
       },
       colors: {
+        'zinc-900': '#18181B',
         'primary-100': '#AAEEFA',
         'primary-200': '#61D1E5',
         'primary-400': '#57BBCD',
@@ -97,6 +99,10 @@ const config = {
         'border': 'hsl(var(--border) / <alpha-value>)',
         'input': 'hsl(var(--input) / <alpha-value>)',
         'ring': 'hsl(var(--ring) / <alpha-value>)',
+      },
+      boxShadow: {
+        'primary': '16px 16px 0 0 #368593', // Single layer shadow with specified color
+        'primary-hover': '20px 20px 0 0 #368593', // Single layer shadow with specified color
       },
       borderRadius: {
         lg: 'var(--radius)',
