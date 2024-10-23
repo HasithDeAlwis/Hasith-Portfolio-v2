@@ -17,8 +17,8 @@
 
   const reverseTailwindClass = isTextRight ? 'lg:flex-row' : 'lg:flex-row-reverse'
 </script>
-<div class={`flex flex-col justify-center gap-x-6 ${reverseTailwindClass} px-4 sm:px-8 `}>
-  <div class='h-auto duration-300 lg:basis-2/5 md:transition-shadow shadow-primary-200 hover:shadow-primary-200-hover '>
+<div class={`flex flex-col justify-center gap-x-6 ${reverseTailwindClass} px-4 sm:px-8 w-11/12 lg:w-full`}>
+  <div class='h-auto duration-300 lg:basis-2/5'>
     <a href={project.demoLink ?? project.sourceLink}>
       {#if project.video}
         <iframe class='w-full h-full' src={project.video} title={project.title} frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>
@@ -28,10 +28,10 @@
     </a>
 
   </div>
-  <div class='h-auto transition-shadow duration-300 basis-2/5 shadow-primary-200 hover:shadow-primary-200-hover'>
+  <div class='h-auto transition-shadow duration-300 basis-2/5 md:shadow-primary-200 md:hover:shadow-primary-200-hover'>
     <div class='relative flex flex-col w-full h-full px-3 pb-4 bg-primary-800'>
       <div class='flex-grow'>
-        <h3 class='mb-2 font-bold text-slate-50 text-large-2-mobile md:text-large-4-desktop lg:text-large-3-desktop'>{project.title}</h3>
+        <h3 class='mb-2 font-bold text-slate-50 text-large-4-mobile md:text-large-4-desktop lg:text-large-3-desktop'>{project.title}</h3>
         <p class='font-normal text-slate-50 text-p1-mobile md:text-p2-desktop lg:text-p3-desktop'>{project.description}</p>
       </div>
 
