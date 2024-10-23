@@ -300,11 +300,11 @@
 
 </script>
 
-<div id='my-skills' class='flex justify-center w-full h-screen relative bg-zinc-900'>
+<section id='my-skills' class='flex justify-center w-full h-screen md:h-[95vh] scroll-mt-16 relative bg-zinc-900'>
   <div class='absolute' id='my-skills-header'>
-    <h3 class='pt-10 text-large-2-desktop text-slate-100 font-bold font-body'>My Skills 🛠️</h3>
+    <h3 class='pt-10 font-bold text-large-2-desktop text-slate-100 font-body'>My Skills 🛠️</h3>
   </div>
-  <div class='w-full relative h-full'>
+  <div class='relative w-full h-full'>
     <div class='absolute' id='logos'>
       {#each logos as logo, index (logo.alt)}
         <div class={`min-w-[${logoSize}px] absolute logo-${index}`} style={getLogoPosition(index, windowWidth, windowHeight)}>
@@ -319,4 +319,4 @@
   <div class='absolute bottom-20 w-[150px] h-[150px] sm:w-[160px] sm:h-[160px] md:w-[170px] md:h-[170px] lg:w-[200px] lg:h-[200px]' id='crystal-ball'>
     <LazyImage src={CrystalBall} classStyles='' />
   </div>
-</div>
+</section>
