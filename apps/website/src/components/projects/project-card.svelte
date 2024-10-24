@@ -17,7 +17,7 @@
 
   const reverseTailwindClass = isTextRight ? 'lg:flex-row' : 'lg:flex-row-reverse'
 </script>
-<div class={`flex flex-col justify-center gap-x-6 ${reverseTailwindClass} px-4 sm:px-8 w-11/12 lg:w-full`}>
+<div class={`flex flex-col justify-center gap-x-6 ${reverseTailwindClass} w-11/12 lg:w-full shadow-primary-mobile-600 hover:shadow-primary-mobile-hover lg:shadow-none hover:shadow-none`}>
   <div class='h-auto duration-300 lg:basis-2/5'>
     <a href={project.demoLink ?? project.sourceLink}>
       {#if project.video}

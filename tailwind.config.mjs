@@ -106,10 +106,12 @@ const config = {
         'ring': 'hsl(var(--ring) / <alpha-value>)',
       },
       boxShadow: {
-        'primary-600': '16px 16px 0 0 #368593', // Single layer shadow with specified color
-        'primary-600-hover': '20px 20px 0 0 #368593', // Single layer shadow with specified color
-        'primary-200': '16px 16px 0 0 #61D1E5', // Single layer shadow with specified color
-        'primary-200-hover': '20px 20px 0 0 #61D1E5', // Single layer shadow with specified color
+        'primary-600': '16px 16px 0 0 #368593',
+        'primary-600-hover': '20px 20px 0 0 #368593',
+        'primary-mobile-600': '0px 0px 15px 5px #368593',
+        'primary-mobile-600-hover': '0px 0px 20px 8px #368593',
+        'primary-200': '16px 16px 0 0 #61D1E5',
+        'primary-200-hover': '20px 20px 0 0 #61D1E5',
       },
       borderRadius: {
         lg: 'var(--radius)',

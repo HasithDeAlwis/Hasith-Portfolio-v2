@@ -27,7 +27,7 @@
       {/each}
     </div>
     <div id='currently-learning-section' class='flex justify-center p-2 mt-3 lg:mt-0 lg:ml-3 basis-full lg:basis-1/2 xl:basis-2/3'>
-      <div class='flex flex-col items-start w-11/12 px-6 transition-shadow duration-300 lg:p-10 bg-primary-800 shadow-primary-600 hover:shadow-primary-600-hover'>
+      <div class='flex flex-col items-start w-11/12 px-6 transition-shadow duration-300 lg:p-10 bg-primary-800 shadow-primary-mobile-600 hover:shadow-primary-mobile-600-hover lg:shadow-primary-600 lg:hover:shadow-primary-600-hover'>
         <h2 class='font-bold text-center text-large-1-mobile md:text-large-3-desktop xl:text-large-1-desktop font-body text-neutral-100'>Currently Learning</h2>
         {#each currentlyLearning as skill, index (index)}
           <div>
