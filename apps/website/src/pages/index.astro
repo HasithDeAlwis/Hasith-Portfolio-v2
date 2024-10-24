@@ -18,12 +18,13 @@ const currentlyLearningData = await getCurrentlyLearningSkillsData()
 const projects = await getProjectsData()
 const images = aboutMeData.assetData
 const text = aboutMeData.textData
+
 // TODO refactor the type SkillsLearnedType to be more descriptive and useable there are fields we don't need
 ---
 <Layout title="Hasith De Alwis: Welcome to My Portfolio">
     <Navbar client:only="svelte" />
     <Hero />
-    {images.length ? <AboutMe images={images} text={text} client:visible /> : null}
+    {images.length ? <AboutMe images={images} text={text} client:idle /> : null}
     {skillsLearnedData.length ? <MySkills logos={skillsLearnedData} client:only="svelte" /> : null}
     {currentlyLearningData.length ? <CurrentlyLearning logos={skillsLearnedData} currentlyLearning={currentlyLearningData} /> : null}
     {projects.length ? <Projects projects={projects} /> : null}
