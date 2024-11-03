@@ -23,6 +23,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.14.2",
     "bits-ui": "^0.21.13",
+    "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
