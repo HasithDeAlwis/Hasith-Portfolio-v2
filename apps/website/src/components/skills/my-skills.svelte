@@ -309,7 +309,9 @@
       {#each logos as logo, index (logo.alt)}
         <div class={`min-w-[${logoSize}px] absolute logo-${index}`} style={getLogoPosition(index, windowWidth, windowHeight)}>
           <div class={`moving-logo-container-${index}`}>
-            <LazyImage src={logo.url} alt={logo.alt} style={`height: ${logoSize}px`} classStyles='transition-transform hover:scale-110 ' />
+            <a href={logo.link}>
+              <LazyImage src={logo.url} alt={logo.alt} style={`height: ${logoSize}px`} classStyles='transition-transform hover:scale-110 ' />
+            </a>
           </div>
         </div>
       {/each}
