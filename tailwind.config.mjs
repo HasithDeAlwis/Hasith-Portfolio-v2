@@ -55,7 +55,7 @@ const config = {
         'h3-desktop': '32px',
         'h4-mobile': '25px',
         'h4-desktop': '30px',
-        'h5-mobile': '22px',
+        'h5-mobile': '18px',
         'h5-desktop': '28px',
         'subeheading-1-mobile': '19px',
         'subeheading-1-desktop': '22px',
