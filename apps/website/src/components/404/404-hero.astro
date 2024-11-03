@@ -1,0 +1,35 @@
+---
+import AnimalButtons from '@components/404/animal-buttons.svelte'
+---
+<div class="h-screen bg-primary-100 justify-center items-center flex flex-col text-center">
+    <div>
+        <h1 class="text-display-1-mobile md:text-display-2-desktop lg:text-display-1-desktop font-display font-bold">
+            404
+        </h1>
+    </div>
+    <div class="font-body px-3">
+        <p class="text-h5-mobile md:text-h5-desktop lg:text-h4-desktop font-light">
+            Click on the correct animal to go back home.
+        </p>
+        <p class="text-h5-mobile md:text-h5-desktop lg:text-h4-desktop font-light">
+            Or be lame and click on my logo
+        </p>
+    </div>
+    <AnimalButtons client:load />
+</div>
+
+<style>
+    /* Add this CSS to your stylesheet */
+@keyframes vibrate {
+    0% { transform: translate(0); }
+    25% { transform: translate(-2px, 2px); }
+    50% { transform: translate(2px, -2px); }
+    75% { transform: translate(-2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.vibrate {
+    animation: vibrate 0.5s ease forwards; /* Duration and easing can be adjusted */
+}
+
+</style>
