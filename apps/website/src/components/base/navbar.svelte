@@ -42,7 +42,7 @@
 <header id='header' class='fixed top-0 left-0 right-0 z-40 bg-opacity-75 bg-primary-400 backdrop-blur-md'>
   <div class='flex items-center justify-between w-full px-6 py-4 mx-auto'>
     <div class='flex justify-start basis-1/2'>
-      <a href='#hero' aria-label='Navigate to Home'>
+      <a href={window.location.pathname === '/' ? '#hero' : '/'} aria-label='Navigate to Home'>
         <div class='w-[40%] lg:w-[12%] text-lg font-bold text-gray-800 transition-transform hover:scale-110'>
           <LazyImage src={Logo} alt='Hasith De Alwis logo' classStyles='main-logo' />
         </div>
