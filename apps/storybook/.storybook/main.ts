@@ -24,7 +24,7 @@ const config: StorybookConfig = {
         alias: [
           {
             find: '$lib',
-            replacement: path.resolve(__dirname, '../src'),
+            replacement: path.resolve(__dirname, '../../website/src'),
           },
           {
             find: '@components',
