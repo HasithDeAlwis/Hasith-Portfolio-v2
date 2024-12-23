@@ -90,3 +90,25 @@ To increase my value as a dev, I want to explore Figma and understand UI/UX to a
 - With an understanding of the atomic design framework, we can use this as the building block for making a design system on Figma.
 - Important that we decide on the atoms as a first step so that we can build a strong foundation for our design.
 - Design with master components
+
+
+# LEARNING #3
+
+Docker and all it's fun stuff!
+Basically, I learned the importance of a monorepo with this project. This should never have been made into a polyrepo because I knew that I had a CMS AND a storybook to deal with. PayloadCMS itself is a very complicated app and it needs to have it's dependencies effectively managed. In the original payload-2 app I tried, it was just an express app. I endedup deploying it using AWS Lightsail and that was a painstaking process. 
+
+## Learning Experience w/deploying Payload v2
+- Building the app itself
+    - Because of JavaScript's messed up ecosystem, building a node app was incredibly hard. I tried w/3 different bundlers (Webpack, Rollup, and ESBuild) each of which failed because neither were able to tree-shake effectively to resolve conflicts with ESM vs CommonJS modules. 
+    - From this experience, I learned a lot more about bundlers. I learned what tree-shaking is, the difference between different bundlers. I learned how ESBuild manages to build every app so quickly and why Vite uses it for dev
+- Dockerizing the app
+    - I had no clue what Docker was before this or why it was even useful, I just thought it'd be a cool challenge to deploy this with docker
+    - It was a cool challenge and I learned a lot from it. Docker is really quite simple, and I learned that it can even be used in my development workflow since you can still maintain HMR w/Docker. 
+    - I might introduce it to cuHacking w/our dev containers so that we keep external contributors on the same env as everyone else so we don't need to deal w/crazy bugs. 
+- Deploying through AWS Lightsail
+    - This is the coolest thing ever. It never clicked for me that anytime I visit a site on the web, it's just a computer that's running a "start" command. 
+    - I SSH'd into the VM and deployed it, and while there was still a lot that I didn't do hands-on, it got me thinking about different ways of deployment other than Netlify. Maybe using SST to for infrastructure-as-code for my next side-project
+
+All in all, this was very cool to work with and deploy, however, I had to switch to PayloadV3 and Netlify for deployments for various reasons. 
+- Netlify's availability is much higher than I could ever have w/just AWS and I need ppl from all around Canada to see my website w/out latency
+- Dealing w/ESM vs CJS module conflicts is such a pain, any new package I introduce is just another point of failure for my project, so I had to bite the bullet and use PayloadV3, which is quite nice. 
