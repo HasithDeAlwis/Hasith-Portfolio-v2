@@ -1,0 +1,22 @@
+---
+import '$lib/styles/app.css'
+import Navbar from '@components/base/navbar.svelte'
+import Footer from '@components/base/footer.svelte'
+import BlogsContainer from '@components/blogs/blog-display/blogs.container.astro'
+import Layout from '$lib/layouts/Layout.astro'
+import { getBlogsData } from '$lib/api/blogs-api'
+
+const allBlogs = await getBlogsData();
+---
+
+<Layout title="Hasith De Alwis: Welcome to My Portfolio">
+  <Navbar client:only="svelte" />
+  {
+    allBlogs.blogsData.length
+? (
+      <BlogsContainer allBlogs={allBlogs.blogsData} />
+    )
+: null
+  }
+  <Footer />
+</Layout>
