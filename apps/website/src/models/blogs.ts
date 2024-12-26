@@ -4,6 +4,15 @@ export interface BlogType {
   date: Date
   tags: Array<TagType>
   thumbnail: string
+  content?: Array<BlogContentType>
+}
+
+export interface BlogContentType {
+  header: string
+  image: string
+  order: number
+  caption: string
+  content: string
 }
 
 export interface TagType {
