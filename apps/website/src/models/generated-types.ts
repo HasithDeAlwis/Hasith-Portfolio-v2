@@ -172,6 +172,7 @@ export interface Blog {
   title: string
   byline: string
   date: string
+  slug: string
   thumbnail: Media
   blogContent: BlogContent[]
   tags: (number | Tag)[]

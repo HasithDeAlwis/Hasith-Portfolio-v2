@@ -2,6 +2,7 @@ export interface BlogType {
   title: string
   byline: string
   date: Date
+  slug: string
   tags: Array<TagType>
   thumbnail: string
   content?: Array<BlogContentType>

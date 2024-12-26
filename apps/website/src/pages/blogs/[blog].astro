@@ -4,18 +4,15 @@ import { createStaticRoutes } from '$lib/components/blogs/utils/create-static-ro
 import Layout from '$lib/layouts/Layout.astro'
 import Navbar from '$lib/components/base/navbar.svelte'
 import Footer from '$lib/components/base/footer.svelte'
-import { getBlogByTitle } from '$lib/api/blogs-api'
+import { getBlogBySlug } from '$lib/api/blogs-api'
 import BlogContent from '$lib/components/blogs/ui/blog-content/content.container.svelte'
-import { getOriginalTitle } from '$lib/components/blogs/utils/format-url'
 
 export function getStaticPaths() {
   return createStaticRoutes()
 }
 const { blog } = Astro.params
-// TODO: Refactor datamodel to include a slug field
-const formattedTitle = getOriginalTitle(blog)
 
-const blogData = await getBlogByTitle(formattedTitle);
+const blogData = await getBlogBySlug(blog);
 ---
 
 <Layout title="Welcome to my blog">
