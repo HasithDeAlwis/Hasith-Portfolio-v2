@@ -50,10 +50,12 @@
   id="header"
   class={`fixed top-0 left-0 right-0 z-40 bg-opacity-75  backdrop-blur-md ${window.location.pathname === "/" ? "bg-primary-400" : "bg-primary-100"}`}
 >
-  <div class="flex items-center justify-between w-full px-6 py-4 mx-auto">
+  <div
+    class="max-w-screen-l px-12 lg:px-44 flex items-center justify-between w-full py-4"
+  >
     <div class="flex justify-start basis-1/2">
       <div
-        class="w-[40%] lg:w-[12%] text-lg font-bold text-gray-800 transition-transform hover:scale-110"
+        class="w-[40%] md:w-1/5 lg:w-[12%] text-lg font-bold text-gray-800 transition-transform hover:scale-110"
       >
         <a
           href={window.location.pathname === "/" ? "#hero" : "/"}
@@ -68,8 +70,8 @@
       </div>
     </div>
 
-    <nav id="navbar" class="sm:basis-1/2 lg:basis-1/3">
-      <div class="items-center justify-around hidden space-x-4 md:flex">
+    <nav id="navbar" class="sm:basis-1/2">
+      <div class="items-center justify-between hidden md:flex">
         {#each links as { href, text, isHome }}
           <a
             aria-label={`navigate to ${text} section`}
