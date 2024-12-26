@@ -145,7 +145,7 @@ export interface Project {
   sourceLink: string
   demoLink?: string | null
   readMoreLink?: string | null
-  projectImage?: (number | null) | Media
+  projectImage?: Media
   videoLink?: string | null
   updatedAt: string
   createdAt: string
@@ -158,7 +158,7 @@ export interface BlogContent {
   id: number
   header?: string | null
   content: string
-  image?: (number | null) | Media
+  image?: Media
   caption?: string | null
   updatedAt: string
   createdAt: string
@@ -173,7 +173,7 @@ export interface Blog {
   byline: string
   date: string
   thumbnail: Media
-  blogContent: (number | BlogContent)[]
+  blogContent: BlogContent[]
   tags: (number | Tag)[]
   updatedAt: string
   createdAt: string
@@ -197,46 +197,46 @@ export interface Tag {
 export interface PayloadLockedDocument {
   id: number
   document?:
-    | ({
-      relationTo: 'users'
-      value: number | User
-    } | null)
-    | ({
-      relationTo: 'media'
-      value: Media
-    } | null)
-    | ({
-      relationTo: 'about-me-asset'
-      value: number | AboutMeAsset
-    } | null)
-    | ({
-      relationTo: 'about-me-description'
-      value: number | AboutMeDescription
-    } | null)
-    | ({
-      relationTo: 'learned-skill-logos'
-      value: number | LearnedSkillLogo
-    } | null)
-    | ({
-      relationTo: 'currently-learning-skill'
-      value: number | CurrentlyLearningSkill
-    } | null)
-    | ({
-      relationTo: 'projects'
-      value: number | Project
-    } | null)
-    | ({
-      relationTo: 'blog-content'
-      value: number | BlogContent
-    } | null)
-    | ({
-      relationTo: 'blog'
-      value: number | Blog
-    } | null)
-    | ({
-      relationTo: 'tags'
-      value: number | Tag
-    } | null)
+  | ({
+    relationTo: 'users'
+    value: number | User
+  } | null)
+  | ({
+    relationTo: 'media'
+    value: Media
+  } | null)
+  | ({
+    relationTo: 'about-me-asset'
+    value: number | AboutMeAsset
+  } | null)
+  | ({
+    relationTo: 'about-me-description'
+    value: number | AboutMeDescription
+  } | null)
+  | ({
+    relationTo: 'learned-skill-logos'
+    value: number | LearnedSkillLogo
+  } | null)
+  | ({
+    relationTo: 'currently-learning-skill'
+    value: number | CurrentlyLearningSkill
+  } | null)
+  | ({
+    relationTo: 'projects'
+    value: number | Project
+  } | null)
+  | ({
+    relationTo: 'blog-content'
+    value: number | BlogContent
+  } | null)
+  | ({
+    relationTo: 'blog'
+    value: number | Blog
+  } | null)
+  | ({
+    relationTo: 'tags'
+    value: number | Tag
+  } | null)
   globalSlug?: string | null
   user: {
     relationTo: 'users'
