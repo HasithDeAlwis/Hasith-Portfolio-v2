@@ -1,15 +1,14 @@
 <script lang="ts">
   import Tag from "../shared/tag.svelte";
-  import { formatUrl } from "../../utils/format-url";
   import type { TagType } from "$lib/models/blogs";
 
   export let title: string = "";
+  export let slug: string = "";
   export let byline: string = "";
   export let date: Date | null = null;
   export let thumbnail: string = "";
   export let tags: TagType[] = [];
 
-  const url = formatUrl(title);
   const formattedDate = date?.toLocaleDateString("en-US", {
     month: "long",
     day: "2-digit",
@@ -17,7 +16,7 @@
   });
 </script>
 
-<a href={`/blogs/${url}`} class="w-full h-full">
+<a href={`/blogs/${slug}`} class="w-full h-full">
   <div
     class="bg-primary-800 w-full h-full flex flex-col items-stretch transition-transform hover:scale-[1.03] duration-300"
   >

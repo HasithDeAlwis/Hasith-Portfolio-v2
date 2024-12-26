@@ -2,12 +2,12 @@ import { globalKeys } from '$lib/keys'
 import type { BlogType } from '$lib/models/blogs'
 import type { Blog } from '$lib/models/generated-types'
 
-export async function getBlogTitles(): Promise<{ blogsData: Array<{ title: string }> }> {
+export async function getBlogSlugs(): Promise<{ blogsData: Array<{ slug: string }> }> {
   const query = `
     query {
         Blogs {
             docs {
-                title
+               slug
             }
         }
     }`
@@ -27,10 +27,10 @@ export async function getBlogTitles(): Promise<{ blogsData: Array<{ title: strin
     }
 
     const data = await response.json()
-    const blogsData: Array<{ title: string }> = data.data.Blogs.docs.map(
+    const blogsData: Array<{ slug: string }> = data.data.Blogs.docs.map(
       (blog: Blog) => {
         return {
-          title: blog.title,
+          slug: blog.slug,
         }
       },
     )
@@ -43,11 +43,11 @@ export async function getBlogTitles(): Promise<{ blogsData: Array<{ title: strin
   }
 }
 
-export async function getBlogByTitle(title: string): Promise<Blog | undefined> {
-  const variables = { title }
+export async function getBlogBySlug(slug: string): Promise<Blog | undefined> {
+  const variables = { slug }
   const query = `
-  query BlogsQuery($title: String) {
-    Blogs(where:{title: {equals:$title}}) {
+  query BlogsQuery($slug: String) {
+    Blogs(where:{slug: {equals:$slug}}) {
       docs {
         date
         title
@@ -116,6 +116,7 @@ export async function getBlogsData() {
     query {
         Blogs {
             docs {
+                slug
                 date 
                 title
                 byline
@@ -159,6 +160,7 @@ export async function getBlogsData() {
           date: new Date(blog.date),
           tags: blog.tags,
           thumbnail: `${globalKeys.API_BASE_URL}${blog.thumbnail.url}`,
+          slug: blog.slug,
         }
       },
     )

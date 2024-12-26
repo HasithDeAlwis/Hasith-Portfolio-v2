@@ -1,12 +1,10 @@
-import { formatUrl } from './format-url'
-import { getBlogTitles } from '$lib/api/blogs-api'
+import { getBlogSlugs } from '$lib/api/blogs-api'
 
 export async function createStaticRoutes() {
-  const blogTitles = await getBlogTitles()
-  return blogTitles.blogsData.map((blog: { title: string }) => {
-    const formattedTitle = formatUrl(blog.title)
+  const blogSlugs = await getBlogSlugs()
+  return blogSlugs.blogsData.map((blog: { slug: string }) => {
     return {
-      params: { blog: formattedTitle },
+      params: { blog: blog.slug },
     }
   })
 }
