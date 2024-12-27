@@ -5,4 +5,5 @@ export default antfu({
   stylistic: true,
   astro: true,
   svelte: true,
+  typescript: true,
 })
