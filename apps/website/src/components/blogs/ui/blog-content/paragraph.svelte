@@ -1,18 +1,22 @@
 <script lang="ts">
+  /* eslint svelte/no-at-html-tags: "error" */
+  import { renderRichText } from "../../utils/render-richtext";
   import type { Media } from "$lib/models/generated-types";
+  import type { ParagraphRichText } from "$lib/models/blogs";
 
-  export let content: string | undefined = "";
+  export let content: ParagraphRichText | undefined;
   export let image: Media | undefined;
   export let header: string | undefined;
+  const renderedRichText = renderRichText(content);
 </script>
 
 <div class="py-6 flex flex-col gap-y-6">
   {#if header}
-    <h2 class="text-h3-desktop text-primary-800 font-bold">
+    <h2 class="text-h2-desktop text-primary-800 font-bold">
       {header}
     </h2>
   {/if}
-  <p class="text-p1-desktop text-primary-700">{content}</p>
+  {@html renderedRichText}
   {#if image}
     <img
       class="object-contain w-full h-full md:h-[30vh] lg:h-[40vh]"

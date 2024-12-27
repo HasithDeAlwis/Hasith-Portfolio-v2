@@ -6,6 +6,7 @@
   export let blogData: Blog;
   const tags = blogData ? blogData.tags.map((tag) => tag.tagText) : [];
   const author = "Hasith De Alwis"; // for now, hardcode this as me :)
+  const blogContents = blogData.blogContent.sort((a, b) => a.order - b.order);
 </script>
 
 <main class="pt-20 max-w-screen-xl px-12 lg:px-44">
@@ -20,9 +21,9 @@
     />
   {/if}
   {#if blogData}
-    {#each blogData.blogContent as content}
+    {#each blogContents as content}
       <Paragraph
-        content={content.content}
+        content={content.paragraph}
         image={content.image}
         header={content.header ? content.header : undefined}
       />
