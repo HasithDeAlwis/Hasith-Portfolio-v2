@@ -112,3 +112,40 @@ Basically, I learned the importance of a monorepo with this project. This should
 All in all, this was very cool to work with and deploy, however, I had to switch to PayloadV3 and Netlify for deployments for various reasons. 
 - Netlify's availability is much higher than I could ever have w/just AWS and I need ppl from all around Canada to see my website w/out latency
 - Dealing w/ESM vs CJS module conflicts is such a pain, any new package I introduce is just another point of failure for my project, so I had to bite the bullet and use PayloadV3, which is quite nice. 
+
+# LEARNING 4
+**RICH TEXT EDITING!!!!**
+---
+I didn't have an appreciation for rich-text and all its nuance until now. I wanted to do this on my own, instead of using the lexical plugin because I thought it would be a good learning opportunity for me.
+
+### Lexical to HTML
+This was very fun, it felt like doing a leet code, my Haskell class actually was useful for once haha. It honestly was not difficult at all, but it got me thinking about how I could create my own rich text editor and I can see how the complexity can sky-rockket. It would be cool for me to build a Svelte-js library that can handle all aspects of rich-text editing for Svelte, might be my next personal project :eyes:
+
+### Sanitation
+I didn't know what HTML sanitation was before taking on this task.
+
+#### What is HTML sanitation?
+HTML sanitation is the process of cleaning up HTML input to ensure it’s safe for rendering in a browser. It involves removing or neutralizing potentially harmful code while retaining the intended formatting and structure of the content. This is especially relevant when dealing with user-generated content or dynamic HTML.
+
+#### Why is it important?
+When raw HTML is rendered directly on a page, it has the potential to include malicious scripts or unsafe elements that can be executed by the browser. This opens your application to security vulnerabilities such as:
+
+**Cross-Site Scripting (XSS)**: A type of attack where an attacker injects malicious scripts into your application. These scripts can steal user data, impersonate users, or take unauthorized actions.
+Injection Attacks: Inserting dangerous code to exploit security holes, often targeting backend systems.
+Browser Exploits: Using unsafe tags or attributes to compromise the end-user’s device or browser.
+By sanitizing HTML, you ensure that only safe, pre-approved tags and attributes are rendered, protecting both your application and its users.
+
+Why do I need it?
+Rich-text editors often deal with user-generated content (mine in this case, but we never know if someone can get access to my CMS), which is inherently unpredictable and potentially unsafe. Without sanitation:
+
+**EXAMPLE**
+Malicious users can include harmful scripts like <script>alert('Hacked')</script>.
+Unsafe tags like <iframe> or <object> could be used to embed unauthorized content.
+Attributes like onerror or onclick could execute malicious JavaScript.
+HTML sanitation ensures you:
+
+Protect your users and data: Sanitized content prevents attackers from exploiting your application.
+Control what gets rendered: You can define which tags, attributes, and styles are allowed, giving you full control over the output.
+Maintain trust: A safe, sanitized application builds user confidence by safeguarding their data and experience.
+How does it work?
+Sanitation libraries (like DOMPurify or sanitize-html) parse the HTML, strip out unsafe or unapproved elements, and return clean, safe content. You can customize them to allow only the tags and attributes necessary for your application (e.g., <p>, <strong>, <em>).
