@@ -63,6 +63,7 @@ export async function getBlogBySlug(slug: string): Promise<Blog | undefined> {
         }
         technicalBlog
         blogContent {
+        paragraph
           header
           image {
             url

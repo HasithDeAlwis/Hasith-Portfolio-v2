@@ -12,9 +12,7 @@
 
 <main class="py-6 gap-y-4 flex lg:flex-row min-h-[calc(100vh-5rem)] flex-col">
   <div class="pr-12 flex flex-col gap-y-1 basis-1/2 font-bod m-auto">
-    <h1
-      class="font-bold lg:text-h1-desktop text-primary-800 sm:text-h2-desktop text-h1-mobile"
-    >
+    <h1 class="font-bold text-h1-desktop text-primary-800">
       {title}
     </h1>
     <p class="text-zinc-400 text-p2-desktop">
