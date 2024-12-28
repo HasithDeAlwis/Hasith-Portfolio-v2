@@ -10,8 +10,10 @@
   export let thumbnail: Media;
 </script>
 
-<main class="py-6 gap-y-4 flex lg:flex-row min-h-[calc(100vh-5rem)] flex-col">
-  <div class="pr-12 flex flex-col gap-y-1 basis-1/2 font-bod m-auto">
+<section
+  class="py-6 gap-y-4 flex lg:flex-row min-h-[calc(100vh-5rem)] flex-col"
+>
+  <div class="pr-12 flex flex-col gap-y-1 basis-1/2 font-body justify-center">
     <h1 class="font-bold text-h1-desktop text-primary-800">
       {title}
     </h1>
@@ -34,10 +36,10 @@
   </div>
   <div class="basis-1/2">
     <img
-      class="object-cover w-full h-full"
+      class="object-cover w-full"
       src={thumbnail.url}
       alt={thumbnail.alt}
       aria-label="hero image for the blog"
     />
   </div>
-</main>
+</section>

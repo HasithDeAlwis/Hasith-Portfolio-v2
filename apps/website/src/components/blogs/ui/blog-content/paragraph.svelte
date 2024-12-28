@@ -19,7 +19,7 @@
   {@html renderedRichText}
   {#if image}
     <img
-      class="object-contain w-full h-full md:h-[30vh] lg:h-[40vh]"
+      class="object-contain w-full"
       src={image.url}
       alt={image.alt}
       aria-label="content image for the blog"
