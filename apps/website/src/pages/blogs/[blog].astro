@@ -5,7 +5,7 @@ import Layout from '$lib/layouts/Layout.astro'
 import Navbar from '$lib/components/base/navbar.svelte'
 import Footer from '$lib/components/base/footer.svelte'
 import { getBlogBySlug } from '$lib/api/blogs-api'
-import BlogContent from '$lib/components/blogs/ui/blog-content/content.container.svelte'
+import BlogContent from '$lib/components/blogs/ui/blog-content/content.presenter.svelte'
 
 export function getStaticPaths() {
   return createStaticRoutes()

@@ -51,7 +51,7 @@
   class={`fixed top-0 left-0 right-0 z-40 bg-opacity-75  backdrop-blur-md ${window.location.pathname === "/" ? "bg-primary-400" : "bg-primary-100"}`}
 >
   <div
-    class="max-w-screen-l px-12 lg:px-44 flex items-center justify-between w-full py-4"
+    class="max-w-screen-xl mx-auto px-6 lg:px-16 xl:px-32 flex items-center justify-between w-full py-4"
   >
     <div class="flex justify-start basis-1/2">
       <div

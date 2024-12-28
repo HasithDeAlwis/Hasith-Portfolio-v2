@@ -9,7 +9,7 @@
   const blogContents = blogData.blogContent.sort((a, b) => a.order - b.order);
 </script>
 
-<main class="pt-20 max-w-screen-xl px-12 lg:px-44">
+<main class="pt-20 max-w-screen-xl mx-auto px-6 lg:px-16 xl:px-32">
   {#if blogData}
     <BlogHeader
       {tags}

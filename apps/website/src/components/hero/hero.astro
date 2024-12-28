@@ -3,84 +3,121 @@ import '$lib/styles/app.css'
 import { Image } from 'astro:assets'
 import forestBackground from '@assets/hero/forest-background.svg'
 import cloudTwo from '@assets/hero/cloud-hero-2.svg'
-import cloudOne from '@assets/hero/cloud-hero-1.svg'
+import cloudOne from '@assets/hero/cloud-hero-1.svg';
 ---
 
-<section id="hero" class="relative w-full min-h-screen overflow-x-hidden bg-gradient-to-t from-secondary-200 via-secondary-200 to-primary-400">
-    <div class="absolute ml-8 md:ml-0 top-24 md:top-32 xl:top-32 md:left-20 ">
-        <div class="relative fade-in-1">
-            <h1 class="text-display-1-mobile md:text-display-2-desktop relative
+<section
+  id="hero"
+  class="relative w-full min-h-screen overflow-x-hidden bg-gradient-to-t from-secondary-200 via-secondary-200 to-primary-400"
+>
+  <div class="absolute top-24 md:top-32 xl:top-32 left-4 lg:left-22 xl:left-44">
+    <div class="relative fade-in-1">
+      <h1
+        class="text-display-1-mobile md:text-display-2-desktop relative
             lg:text-display-1-desktop font-black text-primary-800 leading-[0.5]"
-            >Hasith</h1>
-            <Image
-              src={cloudOne}
-              alt="Top cloud illustration"
-              loading="eager"
-              class="h-auto top-[-1em] md:top-[-5em] left-[-3em] absolute z-40 animate-move-right"
-            />
-        </div>
-        <div class="relative z-0 delay-300 fade-in-2">
-            <h1 class="relative z-10 font-black text-display-1-mobile md:text-display-2-desktop lg:text-display-1-desktop font-display text-primary-800">De Alwis</h1>
-            <Image
-              src={cloudTwo}
-              alt="Bottom cloud illustration"
-              loading="eager"
-              class="h-auto top-[-2em] left-[-1em] md:left-[-2em] absolute z-30 animate-move-left"
-            />
-        </div>
+      >
+        Hasith
+      </h1>
+      <Image
+        src={cloudOne}
+        alt="Top cloud illustration"
+        loading="eager"
+        class="h-auto top-[-1em] md:top-[-5em] left-[-3em] absolute z-40 animate-move-right"
+      />
     </div>
+    <div class="relative z-0 delay-300 fade-in-2">
+      <h1
+        class="relative z-10 font-black text-display-1-mobile md:text-display-2-desktop lg:text-display-1-desktop font-display text-primary-800"
+      >
+        De Alwis
+      </h1>
+      <Image
+        src={cloudTwo}
+        alt="Bottom cloud illustration"
+        loading="eager"
+        class="h-auto top-[-2em] left-[-1em] md:left-[-2em] absolute z-30 animate-move-left"
+      />
+    </div>
+  </div>
 
-    {/* Absolute image background uses a Image tag instead of a background image for optimizations */}
-    <div class="absolute bottom-0 z-0 overflow-hidden xl:h-auto image-render">
-        <Image
-          src={forestBackground}
-          alt="Forest background for hero section"
-          class="object-cover w-screen image-render"
-          id="forest"
-          loading="eager"
-        />
-    </div>
+  {
+    /* Absolute image background uses a Image tag instead of a background image for optimizations */
+  }
+  <div class="absolute bottom-0 z-0 overflow-hidden xl:h-auto image-render">
+    <Image
+      src={forestBackground}
+      alt="Forest background for hero section"
+      class="object-cover w-screen image-render"
+      id="forest"
+      loading="eager"
+    />
+  </div>
 </section>
 
 <style>
-    @keyframes move-left {
-        0% { transform: translate3d(0, 0, 0); }
-        30% { transform: translate3d(0, 0, 0); }
-        100% { transform: translate3d(-100vw, 0, 0); visibility: hidden; }
+  @keyframes move-left {
+    0% {
+      transform: translate3d(0, 0, 0);
     }
-
-    @keyframes move-right {
-        0% { transform: translate3d(0, 0, 0); }
-        20% { transform: translate3d(0, 0, 0); }
-        100% { transform: translate3d(100vw, 0, 0); visibility: hidden; }
+    30% {
+      transform: translate3d(0, 0, 0);
     }
-
-    @keyframes fade-in-from-bottom-1 {
-        0% { opacity: 0; transform: translate3d(0, 20px, 0); }
-        100% { opacity: 1; transform: translate3d(0, 0, 0); }
+    100% {
+      transform: translate3d(-100vw, 0, 0);
+      visibility: hidden;
     }
+  }
 
-    @keyframes fade-in-from-bottom-2 {
-        0% { opacity: 0; transform: translate3d(0, 80px, 0); }
-        100% { opacity: 1; transform: translate3d(0, 0, 0); }
+  @keyframes move-right {
+    0% {
+      transform: translate3d(0, 0, 0);
     }
-
-
-    .fade-in-1 {
-        animation: fade-in-from-bottom-1 0.5s ease forwards;
+    20% {
+      transform: translate3d(0, 0, 0);
     }
-
-    .fade-in-2 {
-        animation: fade-in-from-bottom-2 1s ease forwards;
+    100% {
+      transform: translate3d(100vw, 0, 0);
+      visibility: hidden;
     }
+  }
 
-    .animate-move-left {
-        animation: move-left 3s ease-in-out forwards;
-        will-change: transform, visibility;
+  @keyframes fade-in-from-bottom-1 {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 20px, 0);
     }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
 
-    .animate-move-right {
-        animation: move-right 3s ease-in-out forwards;
-        will-change: transform, visibility;
+  @keyframes fade-in-from-bottom-2 {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 80px, 0);
     }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .fade-in-1 {
+    animation: fade-in-from-bottom-1 0.5s ease forwards;
+  }
+
+  .fade-in-2 {
+    animation: fade-in-from-bottom-2 1s ease forwards;
+  }
+
+  .animate-move-left {
+    animation: move-left 3s ease-in-out forwards;
+    will-change: transform, visibility;
+  }
+
+  .animate-move-right {
+    animation: move-right 3s ease-in-out forwards;
+    will-change: transform, visibility;
+  }
 </style>
