@@ -37,8 +37,8 @@ export async function getLearnedSkillsData(): Promise<LearnedSkillLogoType[]> {
     const data = await response.json() as { data: { LearnedSkillLogos: { docs: LearnedSkillLogo[] } } }
     const skillsLogoData: LearnedSkillLogoType[] = data.data.LearnedSkillLogos.docs.map((skill) => {
       return {
-        url: `${globalKeys.API_BASE_URL}${skill.skillLogo.url}`,
-        alt: skill.skillLogo.alt,
+        url: skill.skillLogo.url || '',
+        alt: skill.skillLogo.alt || '',
         link: skill.skillHref,
       }
     })
@@ -86,7 +86,7 @@ export async function getCurrentlyLearningSkillsData(): Promise<CurrentlyLearnin
 
     const skillsLogoData: CurrentlyLearningSkillType[] = data.data.CurrentlyLearningSkills.docs.map((skill) => {
       return {
-        picUrl: `${globalKeys.API_BASE_URL}${skill.currentSkillLogo.url}`,
+        picUrl: skill.currentSkillLogo.url || '',
         alt: skill.currentSkillLogo.alt,
         link: skill.currentSkillHref,
         description: skill.currentSkillDescription,

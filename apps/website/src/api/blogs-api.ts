@@ -96,10 +96,9 @@ export async function getBlogBySlug(slug: string): Promise<Blog | undefined> {
 
     const data = await response.json()
     const blogData: Blog = data.data.Blogs.docs[0]
-    blogData.thumbnail.url = `${globalKeys.API_BASE_URL}${blogData.thumbnail.url}`
     const blogContent = blogData.blogContent.map((content) => {
       if (content.image) {
-        return { ...content, image: { ...content.image, url: `${globalKeys.API_BASE_URL}${content.image.url}` } }
+        return { ...content, image: { ...content.image, url: content.image.url } }
       }
       return content
     })
@@ -160,7 +159,7 @@ export async function getBlogsData() {
           byline: blog.byline,
           date: new Date(blog.date),
           tags: blog.tags,
-          thumbnail: `${globalKeys.API_BASE_URL}${blog.thumbnail.url}`,
+          thumbnail: blog.thumbnail.url || '',
           slug: blog.slug,
         }
       },

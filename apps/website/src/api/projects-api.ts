@@ -48,7 +48,7 @@ export async function getProjectsData(): Promise<ProjectType[]> {
         demoLink: project.demoLink || null,
         readMoreLink: project.readMoreLink || null,
         alt: project.projectImage?.alt || null,
-        picture: project.projectImage?.url ? `${globalKeys.API_BASE_URL}${project.projectImage.url}` : null,
+        picture: project.projectImage?.url ? project.projectImage.url : null,
         video: project.videoLink || null,
       }
     })
